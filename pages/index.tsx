@@ -17,6 +17,10 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className='flex flex-col md:flex-row gap-2 justify-center items-center p-4'>
+        <Image width={615} height={600} alt="My github stats" src="https://github-readme-stats.vercel.app/api?username=mgehrls&show_icons=true&theme=dark" />
+        <Image width={270} height={400} alt="My github stats" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mgehrls&theme=radical" />
+      </div>
       <div>
         <a download="mattgehrlsrésumé" href='/files/mattgehrlsrésumé.pdf' target='_blank' rel='noopener noreferrer'>⬇ Download My Résumé</a>
       </div>
