@@ -3,9 +3,11 @@ import { AiOutlinePhone } from 'react-icons/ai';
 import { AiOutlineLinkedin } from 'react-icons/ai';
 import { AiOutlineGithub } from 'react-icons/ai';
 
+const anchorClasses = 'p-2 text-lg flex items-center gap-3 hover:scale-125 transform transition-all duration-300 ease-in-out'
+
 function Email(){
   return (
-    <a className='p-2 text-lg flex items-center gap-3' href='mailto:matt.gehrls@gmail.com'>
+    <a className={anchorClasses} href='mailto:matt.gehrls@gmail.com'>
       <div className='flex justify-center items-center'>
         <AiOutlineMail className='text-2xl' />
       </div>
@@ -14,7 +16,7 @@ function Email(){
 }
 function Phone(){
   return (
-    <a className='p-2 text-lg flex items-center gap-3' href='tel:16165002366'>
+    <a className={anchorClasses} href='tel:16165002366'>
       <div className='flex justify-center items-center'>
         <AiOutlinePhone className='text-2xl' />
       </div>
@@ -23,7 +25,7 @@ function Phone(){
 }
 function LinkedIn(){
   return (
-    <a className='p-2 text-lg flex items-center gap-3' target='_blank' href='https://www.linkedin.com/in/mattgehrls'>
+    <a className={anchorClasses} target='_blank' href='https://www.linkedin.com/in/mattgehrls'>
       <div className='flex justify-center items-center'>
         <AiOutlineLinkedin className='text-2xl' />
       </div>
@@ -32,7 +34,7 @@ function LinkedIn(){
 }
 function Github(){
   return (
-    <a className='p-2 text-lg flex items-center gap-3' target='_blank' href='https://github.com/mgehrls'>
+    <a className={anchorClasses} target='_blank' href='https://github.com/mgehrls'>
       <div className='flex justify-center items-center'>
         <AiOutlineGithub className='text-2xl' />
       </div>
