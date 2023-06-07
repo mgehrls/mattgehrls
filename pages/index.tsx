@@ -54,26 +54,17 @@ export default function Home() {
   }
 
   return (
-    <div className='flex justify-center items-center md:items-start'>
-      <div className='w-screen min-w-xs relative flex flex-col md:flex-row justify-center items-center md:items-start text-slate-200 gap-4 max-w-7xl'>
-        <div className='flex flex-col gap-4 bg-blue-400'>
-          <Header/>
-          <Contacts/>
-          <GithubStats/>
-          <ResumeButton/>
-        </div>
-        <div className='max-h-screen flex flex-col w-2/3 bg-pink-500'>
-          <div className='flex flex-1 justify-between p-4 md:mt-12'>
-            <button onClick={()=>setPage("about")}>About Me</button>
+    <div className='flex flex-col order-1 max-h-screen h-screen w-screen text-slate-200'>        
+        <Header/>
+        <div className='flex order-3 h-10 w-full justify-between p-4'>
+            <button onClick={()=>setPage("about")}>About</button>
             <button onClick={()=>setPage("blog")}>Blog</button>
             <button onClick={()=>setPage("portfolio")}>Portfolio</button>
-            <button onClick={()=>setPage("portfolio")}>Contact Me!</button>
+            <button onClick={()=>setPage("portfolio")}>Contact</button>
           </div>
-          <div className='flex-1 overflow-y-auto'>
+          <div className='flex-1 order-2 h-full overflow-y-scroll'>
             <Sections/>
           </div>
-        </div>
-      </div>
     </div>
   )
 }

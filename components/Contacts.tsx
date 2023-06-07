@@ -1,10 +1,11 @@
+import { Dispatch, SetStateAction } from 'react';
 import { AiOutlineMail } from 'react-icons/ai';
 import { AiOutlinePhone } from 'react-icons/ai';
 import { AiOutlineLinkedin } from 'react-icons/ai';
 import { AiOutlineGithub } from 'react-icons/ai';
 
-const anchorClasses = 'p-2 text-lg flex items-center gap-3 hover:scale-125 transform transition-all duration-300 ease-in-out'
-const divClasses = 'flex gap-2 justify-center items-center text-sm'
+const anchorClasses = 'text-lg flex items-center gap-3 hover:scale-125 transform transition-all duration-300 ease-in-out'
+const divClasses = 'flex justify-center items-center text-sm'
 function Email(){
   return (
     <a className={anchorClasses} href='mailto:matt.gehrls@gmail.com'>
@@ -46,19 +47,21 @@ function Github(){
   )
 }
 
+interface ContactsProps {
+  showContactInfo: boolean,
+  setShowContactInfo: Dispatch<SetStateAction<boolean>>}
 
-const Contacts = () => {
+const Contacts = ({showContactInfo, setShowContactInfo}: ContactsProps) => {
   return (
-    <div className='w-full max-w-sm mt-2 flex flex-col justify-center items-center'>
-    <hr className='border-white w-full max-w-sm'/>
-    <div className='flex flex-col w-full max-w-xs justify-between items-center'>
+    <div className='flex flex-col justify-center items-center bg-blue-800'>
+      <div className='flex flex-col justify-between items-start p-8'>
+        <button onClick={()=>{setShowContactInfo(false)}} className='self-end mb-8 text-xs'><p className='text-sm'>X</p></button>
             <Email />
             <Phone />
             <LinkedIn />
             <Github />
+      </div>
     </div>
-    <hr className='border-white w-full max-w-sm'/>
-  </div>
   );
 };
 
