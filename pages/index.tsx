@@ -56,13 +56,13 @@ export default function Home() {
   return (
     <div className='flex flex-col order-1 max-h-screen h-screen w-screen text-slate-200'>        
         <Header/>
-        <div className='flex order-3 h-10 w-full justify-between p-4'>
+        <div className='flex order-3 h-10 w-full items-center justify-between p-4'>
             <button onClick={()=>setPage("about")}>About</button>
             <button onClick={()=>setPage("blog")}>Blog</button>
             <button onClick={()=>setPage("portfolio")}>Portfolio</button>
-            <button onClick={()=>setPage("portfolio")}>Contact</button>
+            <button onClick={()=>setPage("contact")}>Contact</button>
           </div>
-          <div className='flex-1 order-2 h-full overflow-y-scroll'>
+          <div className='flex-1 order-2 h-full overflow-y-scroll p-4'>
             <Sections/>
           </div>
     </div>

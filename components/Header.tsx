@@ -7,7 +7,7 @@ const Header = () => {
     const [showContactInfo, setShowContactInfo] = useState(false);
 
     return (
-        <div className='w-full flex justify-between p-2 border-b border-white'>
+        <div className='w-full flex justify-between p-4 border-b border-white'>
           <div>
             <div className='flex gap-2 items-center justify-center'>
               <Image className='rounded-full shadow-xl w-12' alt='Matt Gehrls Headshot' src='/images/square_headshot.jpg' width={150} height={150} />
@@ -17,7 +17,7 @@ const Header = () => {
               </div>
             </div>
           </div>
-          <button className='text-xs' onClick={()=>{setShowContactInfo(true)}}>Contact Info</button>
+          <button className='text-xs' onClick={()=>{setShowContactInfo(true)}}>More Info v</button>
           {showContactInfo &&
           <div className='absolute top-0 right-0'>
           <Contacts showContactInfo setShowContactInfo={setShowContactInfo} />

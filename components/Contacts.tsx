@@ -53,7 +53,7 @@ interface ContactsProps {
 
 const Contacts = ({showContactInfo, setShowContactInfo}: ContactsProps) => {
   return (
-    <div className='flex flex-col justify-center items-center bg-blue-800'>
+    <div className='flex flex-col justify-center items-center bg-black bg-opacity-80 z-10'>
       <div className='flex flex-col justify-between items-start p-8'>
         <button onClick={()=>{setShowContactInfo(false)}} className='self-end mb-8 text-xs'><p className='text-sm'>X</p></button>
             <Email />
