@@ -5,7 +5,7 @@ import { useState } from 'react';
 const Header = () => {
 
     const [showContactInfo, setShowContactInfo] = useState(false);
-
+    console.log(showContactInfo);
     return (
         <div className='w-full flex justify-between p-4 border-b border-white'>
           <div>
@@ -17,13 +17,15 @@ const Header = () => {
               </div>
             </div>
           </div>
-          <button className='text-xs' onClick={()=>{setShowContactInfo(true)}}>More Info v</button>
-          {showContactInfo &&
-          <div className='absolute top-0 right-0'>
-          <Contacts showContactInfo setShowContactInfo={setShowContactInfo} />
+          <div className='relative flex items-center justify-center'>
+            <button className='text-xs' onClick={()=>{setShowContactInfo(true)}}>More Info v</button>
+
+            {showContactInfo &&
+            <div className='absolute top-0 right-0'>
+            <Contacts showContactInfo setShowContactInfo={setShowContactInfo} />
+            </div>
+            }
           </div>
-          }
-          
         </div>
     );
     };

@@ -1,12 +1,7 @@
 import Header from '@/components/Header';
-import Contacts from '@/components/Contacts';
-import GithubStats from '@/components/GithubStats';
-import ResumeButton from '@/components/ResumeButton';
+import Navbar from '@/components/Navbar';
 import PostTemplate from '@/components/PostTemplate';
 import { useState } from 'react';
-
-
-
 
 export default function Home() {
   
@@ -54,17 +49,14 @@ export default function Home() {
   }
 
   return (
-    <div className='flex flex-col order-1 max-h-screen h-screen w-screen text-slate-200'>        
-        <Header/>
-          <div className='flex order-3 h-10 w-full items-center justify-between p-4'>
-            <button className={page === "about" ? 'w-1/4 bg-slate100 text-slate-800': "w-1/4"} onClick={()=>setPage("about")}>About</button>
-            <button className={page === "blog" ? 'w-1/4 bg-slate100 text-slate-800': "w-1/4"} onClick={()=>setPage("blog")}>Blog</button>
-            <button className={page === "portfolio" ? 'w-1/4 bg-slate100 text-slate-800': "w-1/4"} onClick={()=>setPage("portfolio")}>Portfolio</button>
-            <button className={page === "contact" ? 'w-1/4 bg-slate100 text-slate-800': "w-1/4"} onClick={()=>setPage("contact")}>Contact</button>
-          </div>
+    <div className='flex flex-col items-center order-1 max-h-screen h-screen w-screen text-slate-200'>        
+        <div className='max-w-lg'>
+          <Header/>
+          <Navbar page={page} setPage={setPage}/>
           <div className='flex-1 order-2 h-full overflow-y-scroll p-4'>
             <Sections/>
           </div>
+        </div>
     </div>
   )
 }
