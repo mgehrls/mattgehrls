@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
   const [showContactInfo, setShowContactInfo] = useState(false);
-  console.log(showContactInfo);
+
   return (
     <div className="w-full flex justify-between p-4 border-b border-white">
       <div>

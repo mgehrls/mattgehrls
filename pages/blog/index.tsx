@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import LayoutWrapper from "@/components/LayoutWrapper";
 import Navbar from "@/components/Navbar";
-import PostTemplate from "@/components/PostTemplate";
+import FitForPublicConsumption from "@/components/blogPosts/FitForPublicConsumption";
 
 export default function Blog() {
   return (
@@ -13,16 +13,16 @@ export default function Blog() {
           <div>
             <h1 className="pt-4 pl-4 text-3xl font-bold">Blog</h1>
             <div className="px-4">
-              <PostTemplate />
+              <FitForPublicConsumption />
             </div>
             <div className="p-6">
-              <PostTemplate />
+              <FitForPublicConsumption />
             </div>
             <div className="p-6">
-              <PostTemplate />
+              <FitForPublicConsumption />
             </div>
             <div className="p-6">
-              <PostTemplate />
+              <FitForPublicConsumption />
             </div>
           </div>
         </LayoutWrapper>
