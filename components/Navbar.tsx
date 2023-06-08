@@ -1,17 +1,38 @@
-import { Dispatch, SetStateAction } from "react"
+import { Dispatch, SetStateAction } from "react";
+import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
-interface NavbarProps {
-    page: string,
-    setPage: Dispatch<SetStateAction<string>>}
+const links = [
+  { href: "/", label: "About" },
+  { href: "/blog", label: "Blog" },
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/contact", label: "Contact" },
+];
 
-const Navbar = ({page, setPage}: NavbarProps) => {
-    return (
-    <div className='flex order-3 lg:order-2 h-10 w-full items-center justify-between p-4'>
-        <button className={page === "about" ? 'w-1/4 bg-slate-100 text-slate-800 transition-color delay-300': "w-1/4 transition-all bg-slate-900 text-slate-100"} onClick={()=>setPage("about")}>About</button>
-        <button className={page === "blog" ? 'w-1/4 bg-slate-100 text-slate-800 transition-color delay-300': "w-1/4 transition-all bg-slate-900 text-slate-100"} onClick={()=>setPage("blog")}>Blog</button>
-        <button className={page === "portfolio" ? 'w-1/4 bg-slate-100 text-slate-800 transition-color delay-300': "w-1/4 transition-all bg-slate-900 text-slate-100"} onClick={()=>setPage("portfolio")}>Portfolio</button>
-        <button className={page === "contact" ? 'w-1/4 bg-slate-100 text-slate-800 transition-color delay-300': "w-1/4 transition-all bg-slate-900 text-slate-100"} onClick={()=>setPage("contact")}>Contact</button>
-    </div>)
-}
+const Navbar = () => {
+  const path = usePathname();
 
-export default Navbar
+  return (
+    <nav className="flex order-3 lg:order-2 h-10 w-full items-center justify-between p-4">
+      {links.map((l) => (
+        <li className="list-none" key={l.href}>
+          <motion.div whileHover={{ scale: 1.1 }}>
+            <Link
+              className={`${
+                l.href === path
+                  ? "text-slate-400 font-bold list-none"
+                  : "list-none text-slate-200"
+              } text-base`}
+              href={l.href}
+            >
+              {l.label}
+            </Link>
+          </motion.div>
+        </li>
+      ))}
+    </nav>
+  );
+};
+
+export default Navbar;
