@@ -1,7 +1,16 @@
 import Image from "next/image";
-import Contacts from "./Contacts";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import {
+  AiOutlineGithub,
+  AiOutlineLinkedin,
+  AiOutlineMail,
+  AiOutlinePhone,
+} from "react-icons/ai";
+
+const anchorClasses =
+  "text-lg flex items-center gap-3 hover:scale-125 transform transition-all duration-300 ease-in-out";
+const divClasses = "flex justify-center items-center text-sm gap-2";
 
 const Header = () => {
   const [showContactInfo, setShowContactInfo] = useState(false);
@@ -25,25 +34,39 @@ const Header = () => {
       </div>
       <div className="relative flex items-center justify-center">
         <button
-          className="text-xs"
+          className="text-xs bg-gray-400 px-2 py-1 rounded-md"
           onClick={() => {
             setShowContactInfo(true);
           }}
         >
-          More Info v
+          Info v
         </button>
         <AnimatePresence>
           {showContactInfo && (
             <motion.div
-              initial={{ opacity: 0, y: -25 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -25 }}
+              initial={{ opacity: 0, x: 16, y: -125 }}
+              animate={{ opacity: 1, x: 16, y: -15 }}
+              exit={{ opacity: 0, x: 16, y: -125 }}
               className="absolute top-0 right-0"
             >
-              <Contacts
-                showContactInfo
-                setShowContactInfo={setShowContactInfo}
-              />
+              <div className="flex flex-col justify-center items-center bg-black bg-opacity-90 z-10">
+                <div className="flex flex-col p-8">
+                  <button
+                    onClick={() => {
+                      setShowContactInfo(false);
+                    }}
+                    className="self-end text-xs"
+                  >
+                    <p className="text-sm">Hide ^</p>
+                  </button>
+                  <div className="flex flex-col gap-4 mt-4">
+                    <Email />
+                    <Phone />
+                    <LinkedIn />
+                    <Github />
+                  </div>
+                </div>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
@@ -53,3 +76,52 @@ const Header = () => {
 };
 
 export default Header;
+
+function Email() {
+  return (
+    <a className={anchorClasses} href="mailto:matt.gehrls@gmail.com">
+      <div className={divClasses}>
+        <AiOutlineMail className="text-2xl" />
+        <p>mattgehrls@gmail.com</p>
+      </div>
+    </a>
+  );
+}
+function Phone() {
+  return (
+    <a className={anchorClasses} href="tel:16165002366">
+      <div className={divClasses}>
+        <AiOutlinePhone className="text-2xl" />
+        <p>(1) 616-500-2366</p>
+      </div>
+    </a>
+  );
+}
+function LinkedIn() {
+  return (
+    <a
+      className={anchorClasses}
+      target="_blank"
+      href="https://www.linkedin.com/in/mattgehrls"
+    >
+      <div className={divClasses}>
+        <AiOutlineLinkedin className="text-2xl" />
+        <p>in/mattgehrls</p>
+      </div>
+    </a>
+  );
+}
+function Github() {
+  return (
+    <a
+      className={anchorClasses}
+      target="_blank"
+      href="https://github.com/mgehrls"
+    >
+      <div className={divClasses}>
+        <AiOutlineGithub className="text-2xl" />
+        <p>mgehrls</p>
+      </div>
+    </a>
+  );
+}
