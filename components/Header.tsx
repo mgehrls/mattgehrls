@@ -34,19 +34,19 @@ const Header = () => {
       </div>
       <div className="relative flex items-center justify-center">
         <button
-          className="text-xs bg-gray-400 px-2 py-1 rounded-md"
+          className="text-xs p-2 px-3 transition-all hover:scale-110 focus:scale-110 border rounded-full"
           onClick={() => {
             setShowContactInfo(true);
           }}
         >
-          Info v
+          v
         </button>
         <AnimatePresence>
           {showContactInfo && (
             <motion.div
-              initial={{ opacity: 0, x: 16, y: -125 }}
+              initial={{ opacity: 0, x: 16, y: -30 }}
               animate={{ opacity: 1, x: 16, y: -15 }}
-              exit={{ opacity: 0, x: 16, y: -125 }}
+              exit={{ opacity: 0, x: 16, y: -30 }}
               className="absolute top-0 right-0"
             >
               <div className="flex flex-col justify-center items-center bg-black bg-opacity-90 z-10">
