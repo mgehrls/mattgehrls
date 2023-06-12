@@ -5,4 +5,5 @@
 body{
     --tw-bg-opacity: 1;
     background-color: #252525;
+    max-width: 100vw;
 }

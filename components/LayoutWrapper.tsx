@@ -1,6 +1,4 @@
 import { motion, AnimatePresence } from "framer-motion";
-import Header from "./Header";
-import Navbar from "./Navbar";
 
 type LayoutWrapperProps = {
   children: React.ReactNode;
