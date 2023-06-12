@@ -1,11 +1,20 @@
 import Header from "@/components/Header";
 import LayoutWrapper from "@/components/LayoutWrapper";
 import Navbar from "@/components/Navbar";
+import { useState } from "react";
 
-const handleSubmit = async () => {
-  isSubmitting = true;
+export default function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
-  try {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
     const response = await fetch(`/api/contact`, {
       method: "POST",
       headers: {
@@ -18,27 +27,19 @@ const handleSubmit = async () => {
         message,
       }),
     });
-
-    if (response.ok) {
-      submitted = true;
-    } else {
-      throw new Error("Email sending failed");
+    try {
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        throw new Error("Email sending failed");
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsSubmitting(false);
     }
-  } catch (error) {
-    console.error(error);
-  } finally {
-    isSubmitting = false;
-  }
-};
+  };
 
-let name: string = "";
-let email: string = "";
-let subject: string = "";
-let message: string = "";
-let isSubmitting: boolean = false;
-let submitted: boolean = false;
-
-export default function Contact() {
   return (
     <div className="flex flex-col items-center w-screen overflow-x-hidden text-slate-200">
       <div className="w-full max-w-lg flex flex-col h-screen max-h-screen lg:max-h-none">
@@ -49,94 +50,91 @@ export default function Contact() {
           <Navbar />
         </div>
         <div className="order-2 flex-1 flex max-h-screen h-full lg:order-3">
-          <LayoutWrapper>
-            <div className="w-full p-4">
-              <h1 className="text-3xl font-bold">Contact</h1>
-              <hr className="h-1 w-full" />
-              <h3 className="text-xl font-bold">Coming Soon</h3>
-            </div>
-          </LayoutWrapper>
+          {!submitted ? (
+            <LayoutWrapper>
+              <div className="flex flex-col items-center justify-center w-screen h-full">
+                <h1 className="text-xl font-bold">Contact / Feedback Form</h1>
+                <p className="text-slate-300 text-sm w-3/4 text-center">
+                  Questions / Comments / Job Offers?
+                  <br /> Send me a message!
+                </p>
+                <form
+                  method="post"
+                  className="flex flex-col items-start w-full gap-2"
+                >
+                  <div className="flex items-center justify-between w-full p-2">
+                    <label htmlFor="name">Name:</label>
+                    <input
+                      className="w-3/4 p-2 bg-slate-600 text-slate-100 focus:outline-none"
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="Your name.."
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                    />
+                  </div>
+                  <div className="flex items-center justify-between w-full p-2">
+                    <label htmlFor="email">Email:</label>
+                    <input
+                      className="w-3/4 p-2 bg-slate-600 text-slate-100 focus:outline-none"
+                      type="text"
+                      id="email"
+                      name="email"
+                      placeholder="Your email.."
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                  </div>
+                  <div className="flex items-center justify-between w-full p-2">
+                    <label htmlFor="subject">Subject:</label>
+                    <input
+                      className="w-3/4 p-2 bg-slate-600 text-slate-100 focus:outline-none"
+                      type="text"
+                      id="subject"
+                      name="subject"
+                      placeholder="Subject"
+                      value={subject}
+                      onChange={(e) => setSubject(e.target.value)}
+                    />
+                  </div>
+                  <div className="flex items-center justify-between w-full p-2">
+                    <label htmlFor="message">Message:</label>
+                    <textarea
+                      className="w-3/4 p-2 bg-slate-600 text-slate-100 focus:outline-none"
+                      id="message"
+                      name="message"
+                      placeholder="Leave feedback or comment here!"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                    />
+                  </div>
+                  <button
+                    onClick={handleSubmit}
+                    disabled={isSubmitting}
+                    className="self-center mt-4 bg-blue-500 px-6 py-3"
+                  >
+                    {isSubmitting ? "Sending..." : "Send"}
+                  </button>
+                </form>
+              </div>
+            </LayoutWrapper>
+          ) : (
+            <LayoutWrapper>
+              <div className="border border-white max-w-md flex flex-col gap-4 p-8 items-center justify-center mb-20 bg-zinc-900">
+                <div className="flex flex-col items-center justify-center gap-4">
+                  <h1 className="text-xl font-bold">
+                    Thanks for your message!
+                  </h1>
+                  <p className="text-slate-300 text-sm w-3/4 text-center">
+                    {"I'll get back to you as soon as I can!"}
+                  </p>
+                </div>
+              </div>
+            </LayoutWrapper>
+          )}
         </div>
       </div>
     </div>
   );
-};
-
-
-
-
-{#if !submitted}
-    <h1 class="text-xl font-bold">Contact / Feedback Form</h1>
-    <p class="text-slate-300 text-sm w-3/4 text-center">
-      Questions / Comments / Job Offers?<br /> Send me a message!
-    </p>
-    <form method="post" class="flex flex-col items-start w-full gap-2">
-      <div class="flex items-center justify-between w-full p-2">
-        <label for="name">Name:</label>
-        <input
-          class="w-3/4 p-2 bg-slate-600 text-slate-100 focus:outline-none"
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Your name.."
-          bind:value={name}
-        />
-      </div>
-      <div class="flex items-center justify-between w-full p-2">
-        <label for="email">Email:</label>
-        <input
-          class="w-3/4 p-2 bg-slate-600 text-slate-100 focus:outline-none"
-          type="text"
-          id="email"
-          name="email"
-          placeholder="Your email.."
-          bind:value={email}
-        />
-      </div>
-      <div class="flex items-center justify-between w-full p-2">
-        <label for="subject">Subject:</label>
-        <input
-          class="w-3/4 p-2 bg-slate-600 text-slate-100 focus:outline-none"
-          type="text"
-          id="subject"
-          name="subject"
-          placeholder="Subject"
-          bind:value={subject}
-        />
-      </div>
-      <div class="flex items-center justify-between w-full p-2">
-        <label for="message">Message:</label>
-        <textarea
-          class="w-3/4 p-2 bg-slate-600 text-slate-100 focus:outline-none"
-          id="message"
-          name="message"
-          placeholder="Leave feedback or comment here!"
-          bind:value={message}
-        />
-      </div>
-      <button
-        on:click|preventDefault={handleSubmit}
-        disabled={isSubmitting}
-        class="self-center mt-4 bg-blue-500 px-6 py-3"
-        >{isSubmitting ? "Sending..." : "Send"}</button
-      >
-    </form>
-  </div>
-</div>
-{:else}
-<div
-  style="background: rgb(24, 24, 27); background: linear-gradient(90deg, rgba(219, 39, 119,0.50) 0%, rgba(2, 132, 199, .7) 100%);"
-  class="flex justify-center items-center h-screen overflow-hidden text-slate-100"
->
-  <div
-    class="border border-white max-w-md flex flex-col gap-4 p-8 items-center justify-center mb-20 bg-zinc-900"
-  >
-    <div class="flex flex-col items-center justify-center gap-4">
-      <h1 class="text-xl font-bold">Thanks for your message!</h1>
-      <p class="text-slate-300 text-sm w-3/4 text-center">
-        I'll get back to you as soon as I can!
-      </p>
-    </div>
-  </div>
-</div>
-{/if}
+}

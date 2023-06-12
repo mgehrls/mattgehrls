@@ -6,6 +6,8 @@ import {
   AiOutlineLinkedin,
   AiOutlineMail,
   AiOutlinePhone,
+  AiOutlineArrowDown,
+  AiOutlineArrowUp,
 } from "react-icons/ai";
 
 const anchorClasses =
@@ -34,12 +36,12 @@ const Header = () => {
       </div>
       <div className="relative flex items-center justify-center">
         <button
-          className="text-xs p-2 px-3 transition-all hover:scale-110 focus:scale-110 border rounded-full"
+          className="text-xs p-2 transition-all hover:scale-125 focus:scale-125 border rounded-full"
           onClick={() => {
             setShowContactInfo(true);
           }}
         >
-          v
+          <AiOutlineArrowDown />
         </button>
         <AnimatePresence>
           {showContactInfo && (
@@ -55,9 +57,9 @@ const Header = () => {
                     onClick={() => {
                       setShowContactInfo(false);
                     }}
-                    className="self-end text-xs"
+                    className="text-xs p-2 transition-all hover:scale-125 focus:scale-125 border rounded-full self-end"
                   >
-                    <p className="text-sm">Hide ^</p>
+                    <AiOutlineArrowUp />
                   </button>
                   <div className="flex flex-col gap-4 mt-4">
                     <Email />
