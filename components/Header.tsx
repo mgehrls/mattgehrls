@@ -17,7 +17,7 @@ const Header = () => {
   const [showContactInfo, setShowContactInfo] = useState(false);
 
   return (
-    <div className="w-full flex justify-between p-4 border-b border-white">
+    <div className="w-screen max-w-7xl flex justify-between p-4 border-b border-white">
       <div>
         <div className="flex gap-2 items-center justify-center">
           <Image
