@@ -6,9 +6,8 @@ import {
   AiOutlineLinkedin,
   AiOutlineMail,
   AiOutlinePhone,
-  AiOutlineArrowDown,
-  AiOutlineArrowUp,
 } from "react-icons/ai";
+import Hexagon from "./Hexagon";
 
 const anchorClasses =
   "text-lg flex items-center gap-3 hover:scale-125 transform transition-all duration-300 ease-in-out";
@@ -36,12 +35,17 @@ const Header = () => {
       </div>
       <div className="relative flex items-center justify-center">
         <button
-          className="text-xs p-2 transition-all hover:scale-125 focus:scale-125 border rounded-full"
+          className="text-xs transition-all hover:scale-125 focus:scale-125 z-20"
           onClick={() => {
-            setShowContactInfo(true);
+            setShowContactInfo(!showContactInfo);
           }}
         >
-          <AiOutlineArrowDown />
+          <motion.div
+            initial={false}
+            animate={{ rotate: showContactInfo ? 180 : 0 }}
+          >
+            <Hexagon />
+          </motion.div>
         </button>
         <AnimatePresence>
           {showContactInfo && (
@@ -53,15 +57,7 @@ const Header = () => {
             >
               <div className="flex flex-col justify-center items-center bg-black bg-opacity-90 z-10">
                 <div className="flex flex-col p-8">
-                  <button
-                    onClick={() => {
-                      setShowContactInfo(false);
-                    }}
-                    className="text-xs p-2 transition-all hover:scale-125 focus:scale-125 border rounded-full self-end"
-                  >
-                    <AiOutlineArrowUp />
-                  </button>
-                  <div className="flex flex-col gap-4 mt-4">
+                  <div className="flex flex-col gap-4 mt-16">
                     <Email />
                     <Phone />
                     <LinkedIn />

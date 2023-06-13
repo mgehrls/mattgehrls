@@ -1,9 +1,6 @@
-import { usePathname } from "next/navigation";
 import Image from "next/image";
 
 export default function Home() {
-  const path = usePathname();
-
   return (
     <div className="md:px-4 flex flex-col justify-center items-center gap-4">
       <h1 className="py-20 text-3xl font-bold text-center">

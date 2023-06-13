@@ -14,7 +14,7 @@ const Navbar = () => {
   const path = usePathname();
 
   return (
-    <nav className="flex order-3 lg:order-2 h-10 w-full items-center justify-between p-4">
+    <nav className="flex order-3 lg:order-2 h-10 w-full items-center justify-between p-4 border-t border-white">
       {links.map((l) => (
         <li className="list-none" key={l.href}>
           <motion.div whileHover={{ scale: 1.1 }}>
