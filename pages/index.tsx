@@ -6,7 +6,7 @@ export default function Home() {
       <h1 className="py-20 text-3xl font-bold text-center max-w-sm">
         Dynamic, responsive software w/ the latest tech for web and mobile
       </h1>
-      <Image
+      {/* <Image
         width={384}
         height={600}
         alt="My github stats"
@@ -17,7 +17,7 @@ export default function Home() {
         height={400}
         alt="My most used programming languages"
         src="https://github-readme-stats-mgehrls.vercel.app/api/top-langs/?username=mgehrls&theme=dark"
-      />
+      /> */}
     </div>
   );
 }
