@@ -38,9 +38,9 @@ export default function Contact() {
   };
 
   return (
-    <div>
+    <div className="flex justify-center items-center">
       {!submitted ? (
-        <div className="flex flex-col items-center justify-center max-w-2xl w-screen h-full">
+        <div className="flex flex-col items-center justify-center max-w-xl w-screen h-full">
           <h1 className="text-xl font-bold">Contact / Feedback Form</h1>
           <p className="text-slate-300 text-sm w-3/4 text-center">
             Questions / Comments / Job Offers?

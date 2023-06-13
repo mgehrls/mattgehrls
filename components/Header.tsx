@@ -15,59 +15,79 @@ const divClasses = "flex justify-center items-center text-sm gap-2";
 
 const Header = () => {
   const [showContactInfo, setShowContactInfo] = useState(false);
+  const [hexHover, setHexHover] = useState(false);
 
   return (
-    <div className="w-screen max-w-7xl flex justify-between p-4 border-b border-white">
-      <div>
-        <div className="flex gap-2 items-center justify-center">
-          <Image
-            className="rounded-full shadow-xl w-12"
-            alt="Matt Gehrls Headshot"
-            src="/images/square_headshot.jpg"
-            width={150}
-            height={150}
-          />
-          <div>
-            <h1 className="font-bold">Matt Gehrls</h1>
-            <h3 className="text-xs">Full Stack Dev</h3>
+    <div className="w-screen flex justify-center items-center">
+      <div className="w-screen max-w-7xl flex lg:flex-col lg:gap-4 justify-between lg:justify-center p-4 border-b border-white">
+        <div className="">
+          <div className="flex gap-2 items-center justify-center">
+            <Image
+              className="rounded-full shadow-xl w-12 lg:w-40"
+              alt="Matt Gehrls Headshot"
+              src="/images/square_headshot.jpg"
+              width={150}
+              height={150}
+            />
+            <div>
+              <h1 className="font-bold lg:text-3xl">Matt Gehrls</h1>
+              <h3 className="text-xs lg:text-lg">Full Stack Dev</h3>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="relative flex items-center justify-center">
-        <button
-          className="text-xs transition-all hover:scale-125 focus:scale-125 z-20"
-          onClick={() => {
-            setShowContactInfo(!showContactInfo);
-          }}
-        >
-          <motion.div
-            initial={false}
-            animate={{ rotate: showContactInfo ? 180 : 0 }}
+        <div className="relative flex items-center justify-center">
+          <div className="hidden lg:flex justify-even items-center">
+            <div className="flex gap-4">
+              <Email />
+              <Phone />
+              <LinkedIn />
+              <Github />
+            </div>
+          </div>
+          <button
+            className="text-xs z-20 lg:hidden"
+            onMouseEnter={() => {
+              setHexHover(true);
+            }}
+            onMouseLeave={() => {
+              setHexHover(false);
+            }}
+            onClick={() => {
+              setShowContactInfo(!showContactInfo);
+            }}
           >
-            <Hexagon />
-          </motion.div>
-        </button>
-        <AnimatePresence>
-          {showContactInfo && (
             <motion.div
-              initial={{ opacity: 0, x: 16, y: -30 }}
-              animate={{ opacity: 1, x: 16, y: -15 }}
-              exit={{ opacity: 0, x: 16, y: -30 }}
-              className="absolute top-0 right-0"
+              initial={false}
+              animate={{
+                rotate: showContactInfo ? 180 : 0,
+                scale: hexHover ? 1.2 : 1,
+              }}
             >
-              <div className="flex flex-col justify-center items-center bg-black bg-opacity-90 z-10">
-                <div className="flex flex-col p-8">
-                  <div className="flex flex-col gap-4 mt-16">
-                    <Email />
-                    <Phone />
-                    <LinkedIn />
-                    <Github />
+              <Hexagon />
+            </motion.div>
+          </button>
+          <AnimatePresence>
+            {showContactInfo && (
+              <motion.div
+                initial={{ opacity: 0, x: 16, y: -30 }}
+                animate={{ opacity: 1, x: 16, y: -15 }}
+                exit={{ opacity: 0, x: 16, y: -30 }}
+                className="absolute top-0 right-0"
+              >
+                <div className="flex flex-col justify-center items-center bg-black bg-opacity-90 z-10">
+                  <div className="flex flex-col p-8">
+                    <div className="flex flex-col gap-4 mt-16">
+                      <Email />
+                      <Phone />
+                      <LinkedIn />
+                      <Github />
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </div>
   );

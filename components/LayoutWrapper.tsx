@@ -9,7 +9,7 @@ type LayoutWrapperProps = {
 const LayoutWrapper = ({ children }: LayoutWrapperProps) => (
   <>
     <div className="flex flex-col items-center w-screen overflow-x-hidden min-h-screen max-h-screen text-slate-200">
-      <div className="max-w-7xl flex flex-col min-h-screen max-h-screen">
+      <div className="flex flex-col min-h-screen max-h-screen">
         <div
           className="order-1 fixed md:static top-0 left-0 w-full"
           style={{ backgroundColor: "#171717" }}
@@ -22,7 +22,7 @@ const LayoutWrapper = ({ children }: LayoutWrapperProps) => (
         >
           <Navbar />
         </div>
-        <div className="order-2 flex-1 lg:order-3 py-24">
+        <div className="order-2 flex-1 lg:order-3 py-24 md:py-12">
           <AnimatePresence>
             <motion.div
               initial={{ opacity: 0, y: 15 }}
