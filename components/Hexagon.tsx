@@ -16,9 +16,9 @@ export default function Hexagon() {
         d="M93.757 152.819L233.5 72.1387L373.243 152.819V314.181L233.5 394.861L93.757 314.181V152.819Z"
         fill="#252525"
         stroke="url(#paint1_linear_1_11)"
-        stroke-width="2"
+        strokeWidth="2"
       />
-      <path d="M347 195L234 308L121 195" stroke="white" stroke-width="20" />
+      <path d="M347 195L234 308L121 195" stroke="white" strokeWidth="20" />
       <defs>
         <linearGradient
           id="paint0_linear_1_11"
@@ -28,8 +28,8 @@ export default function Hexagon() {
           y2="234"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#EB874E" />
-          <stop offset="1" stop-color="#2CC0A5" />
+          <stop stopColor="#EB874E" />
+          <stop offset="1" stopColor="#2CC0A5" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_1_11"
@@ -39,8 +39,8 @@ export default function Hexagon() {
           y2="233.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.15" stop-color="#EB874E" />
-          <stop offset="1" stop-color="#2CC0A5" />
+          <stop offset="0.15" stopColor="#EB874E" />
+          <stop offset="1" stopColor="#2CC0A5" />
         </linearGradient>
       </defs>
     </svg>
