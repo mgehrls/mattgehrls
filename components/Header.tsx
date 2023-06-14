@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <div className="w-screen flex justify-center items-center">
-      <div className="w-screen max-w-7xl flex lg:flex-col lg:gap-4 justify-between lg:justify-center p-4 border-b border-white">
+      <div className="w-screen max-w-7xl flex lg:flex-col lg:gap-4 justify-between lg:justify-center p-4 lg:px-8 border-b border-white">
         <div className="">
           <div className="flex gap-2 items-center justify-center">
             <Image
