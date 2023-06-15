@@ -9,9 +9,9 @@ type LayoutWrapperProps = {
 const LayoutWrapper = ({ children }: LayoutWrapperProps) => (
   <>
     <div className="flex flex-col items-center w-screen overflow-x-hidden min-h-screen max-h-screen text-slate-200">
-      <div className="flex flex-col min-h-screen max-h-screen">
+      <div className="flex flex-col min-h-screen max-h-screen z-50">
         <div
-          className="order-1 fixed md:static top-0 left-0 w-full"
+          className="order-1 fixed md:static top-0 left-0 w-full z-50"
           style={{ backgroundColor: "#171717" }}
         >
           <Header />
