@@ -19,11 +19,11 @@ const Header = () => {
 
   return (
     <div className="w-screen flex justify-center items-center">
-      <div className="w-screen max-w-7xl flex lg:flex-col lg:gap-4 justify-between lg:justify-center p-4 border-b border-white">
+      <div className="w-screen max-w-7xl flex lg:flex-col lg:gap-4 justify-between lg:justify-center p-4 lg:px-8 border-b border-white">
         <div className="">
           <div className="flex gap-2 items-center justify-center">
             <Image
-              className="rounded-full shadow-xl w-12 lg:w-40"
+              className="rounded-full shadow-xl w-12 lg:w-40 drop-shadow-[-2px_2px_2px_rgba(44,192,165,1)]"
               alt="Matt Gehrls Headshot"
               src="/images/square_headshot.jpg"
               width={150}
@@ -37,7 +37,7 @@ const Header = () => {
         </div>
         <div className="relative flex items-center justify-center">
           <div className="hidden lg:flex justify-even items-center">
-            <div className="flex gap-4">
+            <div className="flex gap-16">
               <Email />
               <Phone />
               <LinkedIn />

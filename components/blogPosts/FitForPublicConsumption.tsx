@@ -1,4 +1,3 @@
-const text = "";
 const pTagClasses = "text-slate-200 text-md tracking-wide leading-loose";
 const headerClasses = "text-xl font-bold tracking-wide leading-loose";
 
