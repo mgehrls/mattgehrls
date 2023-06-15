@@ -18,7 +18,7 @@ const LayoutWrapper = ({ children }: LayoutWrapperProps) => (
         </div>
         <div
           style={{ backgroundColor: "#171717" }}
-          className="order-3 md:order-2 fixed md:static bottom-0 left-0 w-full"
+          className="order-3 md:order-2 fixed md:static bottom-0 left-0 w-full z-50"
         >
           <Navbar />
         </div>
