@@ -1,4 +1,3 @@
-import { Dispatch, SetStateAction } from "react";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
