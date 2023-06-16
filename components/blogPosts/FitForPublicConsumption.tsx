@@ -25,12 +25,12 @@ const FitForPublicConsumption = () => {
       </p>
       <p className={pTagClasses}>
         {
-          "That is the not-so-virtuous cycle I've been in for the last year. Not feeling “ready” for that first position, and maybe not confident the the quality of my work. Thanks to working with others in the community and sharing my code with other devs, I've realized my work paid off. I'm comfortable saying I'm a full stack developer without a hint of imposter syndrome, but I've had nothing to show off."
+          "That is the not-so-virtuous cycle I've been in for the last year. Not feeling “ready” for that first position, and maybe not confident the the quality of my work. Thanks to working with others in the community and sharing my code with other devs, I've realized my work paid off. I'm comfortable saying I'm a full stack developer without a hint of imposter syndrome, but so far I've had nothing to show off."
         }
       </p>
       <p className={pTagClasses}>
         {
-          "I'm preparing to change that. I am going to start putting projects online and publicly 'advertise' them on social media. For accountability sake here's the plan:"
+          "That's changed. I am going to start putting projects online and publicly 'advertise' them on social media. For accountability sake here's the plan:"
         }
       </p>
       <div>
@@ -46,6 +46,7 @@ const FitForPublicConsumption = () => {
             "If anyone is looking at this site and thinking “this is an ugly site, why would you advertise this?” I haven't been working on this. I threw it together in an hour or two. I need to finish a project I'm nearly done with, then redesigning this is next on the agenda. Everything is a work in progress."
           }
         </p>
+        <br />
       </div>
       <div>
         <h3>
