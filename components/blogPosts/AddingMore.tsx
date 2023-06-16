@@ -41,7 +41,7 @@ const AddingMore = () => {
         }
       </p>
       <Image
-        className="rounded-lg shadow-xl self-center"
+        className="rounded-lg shadow-xl self-center border-2 border-slate-100"
         src="/images/buttonzoomed.gif"
         alt="Animated button example"
         width={250}
