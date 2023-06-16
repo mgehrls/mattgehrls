@@ -1,5 +1,13 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+function ValidateEmail(mail: string) {
+  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+    return true;
+  }
+  alert("You have entered an invalid email address!");
+  return false;
+}
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -11,30 +19,40 @@ export default function Contact() {
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    setIsSubmitting(true);
 
-    const response = await fetch(`/api/contact`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name,
-        email,
-        subject,
-        message,
-      }),
-    });
-    try {
-      if (response.ok) {
-        setSubmitted(true);
-      } else {
-        throw new Error("Email sending failed");
+    if (
+      name !== "" &&
+      subject !== "" &&
+      message !== "" &&
+      ValidateEmail(email)
+    ) {
+      setIsSubmitting(true);
+
+      const response = await fetch(`/api/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          subject,
+          message,
+        }),
+      });
+      try {
+        if (response.ok) {
+          setSubmitted(true);
+        } else {
+          throw new Error("Email sending failed");
+        }
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setIsSubmitting(false);
       }
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setIsSubmitting(false);
+    } else {
+      alert("Please fill in all fields");
     }
   };
 
@@ -56,7 +74,7 @@ export default function Contact() {
                 className="flex flex-col items-start w-full gap-2"
               >
                 <div className="flex items-center justify-between w-full p-2">
-                  <label htmlFor="name">Name:</label>
+                  <label htmlFor="name">*Name:</label>
                   <input
                     className="w-3/4 p-2 bg-teal-900 text-slate-100 focus:outline-none"
                     type="text"
@@ -68,7 +86,7 @@ export default function Contact() {
                   />
                 </div>
                 <div className="flex items-center justify-between w-full p-2">
-                  <label htmlFor="email">Email:</label>
+                  <label htmlFor="email">*Email:</label>
                   <input
                     className="w-3/4 p-2 bg-teal-900 text-slate-100 focus:outline-none"
                     type="text"
@@ -80,7 +98,7 @@ export default function Contact() {
                   />
                 </div>
                 <div className="flex items-center justify-between w-full p-2">
-                  <label htmlFor="subject">Subject:</label>
+                  <label htmlFor="subject">*Subject:</label>
                   <input
                     className="w-3/4 p-2 bg-teal-900 text-slate-100 focus:outline-none"
                     type="text"
@@ -92,7 +110,7 @@ export default function Contact() {
                   />
                 </div>
                 <div className="flex items-center justify-between w-full p-2">
-                  <label htmlFor="message">Message:</label>
+                  <label htmlFor="message">*Message:</label>
                   <textarea
                     className="w-3/4 p-2 bg-teal-900 text-slate-100 focus:outline-none"
                     id="message"

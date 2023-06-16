@@ -10,7 +10,7 @@ export default function EmptyHex() {
       <path
         d="M11.757 88.5928L141.5 13.6857L271.243 88.5928V238.407L141.5 313.314L11.757 238.407V88.5928Z"
         stroke="url(#paint0_linear_1_13)"
-        stroke-width="22"
+        strokeWidth="22"
       />
       <defs>
         <linearGradient
@@ -21,8 +21,8 @@ export default function EmptyHex() {
           y2="163.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.15" stop-color="#EB874E" />
-          <stop offset="1" stop-color="#2CC0A5" />
+          <stop offset="0.15" stopColor="#EB874E" />
+          <stop offset="1" stopColor="#2CC0A5" />
         </linearGradient>
       </defs>
     </svg>
