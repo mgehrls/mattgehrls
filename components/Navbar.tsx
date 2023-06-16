@@ -23,7 +23,7 @@ const Navbar = () => {
               <Link
                 className={`${
                   l.href === path
-                    ? "text-teal-400 font-bold list-none transition-all flex items-center gap-2 max-h-8  "
+                    ? "text-teal-400 font-bold list-none transition-all flex items-center gap-2 max-h-8     "
                     : "list-none text-slate-200 transition-all flex items-center gap-2"
                 } text-lg`}
                 href={l.href}
