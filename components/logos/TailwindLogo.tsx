@@ -26,8 +26,8 @@ export default function TailwindLogo() {
           y2="7295.3"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#2298BD" />
-          <stop offset="1" stop-color="#0ED7B5" />
+          <stop stopColor="#2298BD" />
+          <stop offset="1" stopColor="#0ED7B5" />
         </linearGradient>
         <clipPath id="clip0_132_2">
           <rect width="512" height="64" fill="white" />

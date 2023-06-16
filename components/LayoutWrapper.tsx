@@ -18,11 +18,11 @@ const LayoutWrapper = ({ children }: LayoutWrapperProps) => (
         </div>
         <div
           style={{ backgroundColor: "#171717" }}
-          className="order-3 md:order-2 fixed md:static bottom-0 left-0 w-full z-50"
+          className="transition-all duration-500 order-3 md:order-2 fixed md:static bottom-0 left-0 w-full z-50"
         >
           <Navbar />
         </div>
-        <div className="order-2 flex-1 lg:order-3 py-24 md:py-12">
+        <div className="transition-all duration-500 order-2 flex-1 lg:order-3 py-24 md:py-12">
           <AnimatePresence>
             <motion.div
               initial={{ opacity: 0, y: 15 }}

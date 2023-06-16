@@ -98,9 +98,9 @@ export default function NodeLogo() {
           y2="92.4856"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.3" stop-color="#3E863D" />
-          <stop offset="0.5" stop-color="#55934F" />
-          <stop offset="0.8" stop-color="#5AAD45" />
+          <stop offset="0.3" stopColor="#3E863D" />
+          <stop offset="0.5" stopColor="#55934F" />
+          <stop offset="0.8" stopColor="#5AAD45" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_132_6"
@@ -110,9 +110,9 @@ export default function NodeLogo() {
           y2="39.3198"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.57" stop-color="#3E863D" />
-          <stop offset="0.72" stop-color="#619857" />
-          <stop offset="1" stop-color="#76AC64" />
+          <stop offset="0.57" stopColor="#3E863D" />
+          <stop offset="0.72" stopColor="#619857" />
+          <stop offset="1" stopColor="#76AC64" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_132_6"
@@ -122,11 +122,11 @@ export default function NodeLogo() {
           y2="60.1806"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.16" stop-color="#6BBF47" />
-          <stop offset="0.38" stop-color="#79B461" />
-          <stop offset="0.47" stop-color="#75AC64" />
-          <stop offset="0.7" stop-color="#659E5A" />
-          <stop offset="0.9" stop-color="#3E863D" />
+          <stop offset="0.16" stopColor="#6BBF47" />
+          <stop offset="0.38" stopColor="#79B461" />
+          <stop offset="0.47" stopColor="#75AC64" />
+          <stop offset="0.7" stopColor="#659E5A" />
+          <stop offset="0.9" stopColor="#3E863D" />
         </linearGradient>
         <clipPath id="clip0_132_6">
           <rect width="230" height="141" fill="white" />

@@ -12,10 +12,22 @@ export default function Home() {
         className="flex-1 order-2 h-full p-4"
       >
         <div className="md:px-4 flex flex-col justify-center items-center gap-20">
-          <h1 className="py-10 sm:py-16 lg:py-40 text-3xl sm:text-5xl lg:text-7xl text-center max-w-sm sm:max-w-lg lg:max-w-4xl">
-            <span className="font-bold text-orange-400">Dynamic</span>,{" "}
-            <span className="italic font-semibold">responsive</span> software w/
-            the latest tech for{" "}
+          <h1 className="transition-all duration-500 py-10 sm:py-16 lg:py-40 text-3xl sm:text-5xl lg:text-7xl text-center max-w-sm sm:max-w-lg lg:max-w-4xl">
+            <span
+              style={{
+                backgroundColor: "#2CC0A5",
+                background:
+                  "linear-gradient(to right, #2CC0A5 42%, #EB874E 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+              className="font-bold"
+            >
+              Dynamic
+            </span>
+            , <span className="italic font-semibold">responsive</span> software
+            w/ the latest tech for{" "}
             <span className="underline text-teal-400">web and mobile</span>
           </h1>
           <div

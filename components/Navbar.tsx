@@ -2,6 +2,8 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
+import EmptyHex from "./EmptyHex";
+
 const links = [
   { href: "/", label: "About" },
   { href: "/blog", label: "Blog" },
@@ -17,15 +19,16 @@ const Navbar = () => {
       <nav className="flex max-w-7xl order-3 lg:order-2 h-10 w-full items-center justify-between lg:justify-evenly p-4 border-t border-white">
         {links.map((l) => (
           <li className="list-none" key={l.href}>
-            <motion.div whileHover={{ scale: 1.1 }}>
+            <motion.div whileFocus={{ scale: 1.1 }} whileHover={{ scale: 1.1 }}>
               <Link
                 className={`${
                   l.href === path
-                    ? "text-teal-400 font-bold list-none"
-                    : "list-none text-slate-200"
+                    ? "text-teal-400 font-bold list-none transition-all flex items-center gap-2"
+                    : "list-none text-slate-200 transition-all flex items-center gap-2"
                 } text-lg`}
                 href={l.href}
               >
+                {l.href === path && <EmptyHex />}
                 {l.label}
               </Link>
             </motion.div>

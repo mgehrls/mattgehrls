@@ -46,14 +46,11 @@ export default function Contact() {
         exit={{ opacity: 0, y: 15 }}
         className="flex-1 order-2 h-full p-4"
       >
-        <div className="flex justify-center items-center">
+        <div className="flex h-full justify-center items-center">
           {!submitted ? (
-            <div className="flex flex-col items-center justify-center max-w-xl w-screen h-full">
-              <h1 className="text-xl font-bold">Contact / Feedback Form</h1>
-              <p className="text-slate-300 text-sm w-3/4 text-center">
-                Questions / Comments / Job Offers?
-                <br /> Send me a message!
-              </p>
+            <div className="flex flex-col items-center justify-center max-w-xl w-screen h-full gap-8">
+              <h1 className="text-3xl font-bold">Contact Me</h1>
+
               <form
                 method="post"
                 className="flex flex-col items-start w-full gap-2"
@@ -61,7 +58,7 @@ export default function Contact() {
                 <div className="flex items-center justify-between w-full p-2">
                   <label htmlFor="name">Name:</label>
                   <input
-                    className="w-3/4 p-2 bg-slate-600 text-slate-100 focus:outline-none"
+                    className="w-3/4 p-2 bg-teal-900 text-slate-100 focus:outline-none"
                     type="text"
                     id="name"
                     name="name"
@@ -73,7 +70,7 @@ export default function Contact() {
                 <div className="flex items-center justify-between w-full p-2">
                   <label htmlFor="email">Email:</label>
                   <input
-                    className="w-3/4 p-2 bg-slate-600 text-slate-100 focus:outline-none"
+                    className="w-3/4 p-2 bg-teal-900 text-slate-100 focus:outline-none"
                     type="text"
                     id="email"
                     name="email"
@@ -85,7 +82,7 @@ export default function Contact() {
                 <div className="flex items-center justify-between w-full p-2">
                   <label htmlFor="subject">Subject:</label>
                   <input
-                    className="w-3/4 p-2 bg-slate-600 text-slate-100 focus:outline-none"
+                    className="w-3/4 p-2 bg-teal-900 text-slate-100 focus:outline-none"
                     type="text"
                     id="subject"
                     name="subject"
@@ -97,7 +94,7 @@ export default function Contact() {
                 <div className="flex items-center justify-between w-full p-2">
                   <label htmlFor="message">Message:</label>
                   <textarea
-                    className="w-3/4 p-2 bg-slate-600 text-slate-100 focus:outline-none"
+                    className="w-3/4 p-2 bg-teal-900 text-slate-100 focus:outline-none"
                     id="message"
                     name="message"
                     placeholder="Leave feedback or comment here!"
@@ -108,7 +105,7 @@ export default function Contact() {
                 <button
                   onClick={handleSubmit}
                   disabled={isSubmitting}
-                  className="self-center mt-4 bg-blue-500 px-6 py-3"
+                  className="transition-all self-center mt-4 px-6 py-3 bg-orange-700 hover:scale-125 hover:rounded-lg hover:font-bold focus:scale-125 focus:rounded-lg focus:font-bold"
                 >
                   {isSubmitting ? "Sending..." : "Send"}
                 </button>

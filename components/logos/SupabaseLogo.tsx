@@ -61,8 +61,8 @@ export default function SupabaseLogo() {
           y2="113.724"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#249361" />
-          <stop offset="1" stop-color="#3ECF8E" />
+          <stop stopColor="#249361" />
+          <stop offset="1" stopColor="#3ECF8E" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_132_30"
