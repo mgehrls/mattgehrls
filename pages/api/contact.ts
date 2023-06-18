@@ -1,11 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import sgMail from "@sendgrid/mail"
 
-const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
-
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if(SENDGRID_API_KEY !== undefined){
-    sgMail.setApiKey(SENDGRID_API_KEY);
+  if(process.env.SENDGRID_API_KEY !== undefined){
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     }
 
     const msg = {
@@ -22,7 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       if(x[0].statusCode === 200){
         res.status(x[0].statusCode).json({message: "success"})
       } else {
-        res.status(x[0].statusCode).json({message: "check status code"})
+        res.status(x[0].statusCode).json({message: "error"})
        }
     })
 }
