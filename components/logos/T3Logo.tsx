@@ -8,8 +8,8 @@ export default function NextLogo() {
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M86.8014 13.102L98.9584 0.508179H0.244019V13.102H86.8014Z"
         fill="#E2E8F0"
       />
@@ -22,8 +22,8 @@ export default function NextLogo() {
         fill="#E2E8F0"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M46.2263 100.691L46.2264 23.8552H33.6055V100.691H46.2263Z"
         fill="#E2E8F0"
       />

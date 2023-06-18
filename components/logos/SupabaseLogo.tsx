@@ -46,7 +46,7 @@ export default function SupabaseLogo() {
       <path
         d="M60.7293 139.955C58.8277 142.385 54.9721 141.053 54.9263 137.95L54.2563 92.5677H84.3273C89.774 92.5677 92.8117 98.9516 89.4248 103.28L60.7293 139.955Z"
         fill="url(#paint1_linear_132_30)"
-        fill-opacity="0.2"
+        fillOpacity="0.2"
       />
       <path
         d="M48.4996 66.9299C50.4012 64.4996 54.2568 65.8313 54.3027 68.9341L54.5962 114.317H24.9016C19.4548 114.317 16.417 107.933 19.804 103.604L48.4996 66.9299Z"
@@ -73,7 +73,7 @@ export default function SupabaseLogo() {
           gradientUnits="userSpaceOnUse"
         >
           <stop />
-          <stop offset="1" stop-opacity="0" />
+          <stop offset="1" stopOpacity="0" />
         </linearGradient>
       </defs>
     </svg>

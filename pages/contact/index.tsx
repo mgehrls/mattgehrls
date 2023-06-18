@@ -71,6 +71,7 @@ export default function Contact() {
 
               <form
                 method="post"
+                onSubmit={handleSubmit}
                 className="flex flex-col items-start w-full gap-2"
               >
                 <div className="flex items-center justify-between w-full p-2">
@@ -121,7 +122,7 @@ export default function Contact() {
                   />
                 </div>
                 <button
-                  onClick={handleSubmit}
+                  type="submit"
                   disabled={isSubmitting}
                   className="transition-all self-center mt-4 px-6 py-3 bg-orange-700 hover:scale-125 hover:rounded-lg hover:font-bold focus:scale-125 focus:rounded-lg focus:font-bold"
                 >

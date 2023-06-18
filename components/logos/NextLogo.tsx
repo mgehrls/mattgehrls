@@ -8,7 +8,7 @@ export default function NextLogo() {
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio=""
     >
-      <g clip-path="url(#clip0_131_10)">
+      <g clipPath="url(#clip0_131_10)">
         <path
           d="M241.927 0.0455322H305.317V11.7456H280.171V73.2981H267.597V11.7456H241.927V0.0455322Z"
           fill="white"
@@ -26,8 +26,8 @@ export default function NextLogo() {
           fill="white"
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M74.7314 73.301L15.7164 0.0178223H0V73.2705H12.5731V15.6755L58.9364 73.301H74.7314Z"
           fill="white"
         />

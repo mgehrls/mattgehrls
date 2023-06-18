@@ -7,7 +7,7 @@ export default function NextLogo() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_131_19)">
+      <g clipPath="url(#clip0_131_19)">
         <path
           d="M70.9566 77.545C78.421 77.545 84.4721 71.4807 84.4721 64C84.4721 56.5193 78.421 50.455 70.9566 50.455C63.4922 50.455 57.441 56.5193 57.441 64C57.441 71.4807 63.4922 77.545 70.9566 77.545Z"
           fill="#0098ED"
