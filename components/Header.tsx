@@ -18,7 +18,7 @@ const Header = () => {
   const [hexHover, setHexHover] = useState(false);
 
   return (
-    <div className="w-screen flex justify-center items-center">
+    <div className="w-screen flex justify-center items-center bg-[#171717]">
       <div className="w-screen max-w-7xl flex lg:flex-col lg:gap-4 justify-between lg:justify-center p-4 lg:px-8 border-b border-white">
         <div className="">
           <div className="flex gap-2 items-center justify-center">
@@ -72,7 +72,7 @@ const Header = () => {
                 initial={{ opacity: 0, x: 16, y: -30 }}
                 animate={{ opacity: 1, x: 16, y: -15 }}
                 exit={{ opacity: 0, x: 16, y: -30 }}
-                className="absolute top-0 right-0"
+                className="absolute top-0 right-0 lg:hidden"
               >
                 <div className="flex flex-col justify-center items-center bg-black bg-opacity-90 z-10">
                   <div className="flex flex-col p-8">

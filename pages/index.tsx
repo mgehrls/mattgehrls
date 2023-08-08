@@ -12,7 +12,7 @@ export default function Home() {
         className="flex-1 order-2 h-full p-4"
       >
         <div className="md:px-4 flex flex-col justify-center items-center gap-20">
-          <h1 className="transition-all duration-500 py-10 sm:py-16 lg:py-40 text-3xl sm:text-5xl lg:text-7xl text-center max-w-sm sm:max-w-lg lg:max-w-4xl">
+          <h1 className="transition-all duration-500 py-10 sm:py-16 lg:py-20 xl:py-40 text-3xl sm:text-5xl lg:text-5xl xl:text-7xl text-center max-w-sm sm:max-w-lg lg:max-w-4xl">
             <span
               style={{
                 backgroundColor: "#2CC0A5",
@@ -35,20 +35,6 @@ export default function Home() {
             className="py-10 sm:py-16 max-w-7xl"
           >
             <LogoSection />
-          </div>
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start lg: gap-8 py-10 sm:py-16 lg:py-40">
-            <Image
-              width={384}
-              height={600}
-              alt="My github stats"
-              src="https://github-readme-stats-mgehrls.vercel.app/api?username=mgehrls&show_icons=true&theme=dark&hide_rank=true"
-            />
-            <Image
-              width={384}
-              height={400}
-              alt="My most used programming languages"
-              src="https://github-readme-stats-mgehrls.vercel.app/api/top-langs/?username=mgehrls&theme=dark"
-            />
           </div>
         </div>
       </motion.div>
