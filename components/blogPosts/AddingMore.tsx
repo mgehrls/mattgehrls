@@ -13,9 +13,9 @@ const AddingMore = () => {
   return (
     <div className="flex flex-col gap-4 mt-8">
       <div>
-        <h1 className="text-2xl font-bold tracking-wide">
+        <h2 className="text-2xl font-bold tracking-wide">
           Adding More to My Portfolio
-        </h1>
+        </h2>
         <hr className="border-white w-full max-w-sm" />
         <div className="flex justify-between max-w-sm">
           <p className="text-sm text-slate-100 tracking-wide leading-loose">
@@ -43,7 +43,7 @@ const AddingMore = () => {
       <Image
         className="rounded-lg shadow-xl self-center border-2 border-slate-100"
         src="/images/buttonzoomed.gif"
-        alt="Animated button example"
+        alt="A gif that shows the animation of the button in the upper right of the page on mobile. The animation is a hexagon with an arrow in the middle that does a bouncy rotation when clicked and displays or hides Matt's contact information."
         width={250}
         height={250}
       />

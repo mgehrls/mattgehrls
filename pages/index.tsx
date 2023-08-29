@@ -1,10 +1,17 @@
 import LogoSection from "@/components/LogoSection";
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <AnimatePresence>
+      <Head>
+        <title>Home | Matt Gehrls - Web Developer</title>
+        <meta
+          name="description"
+          content="A résumé website for Matt Gehrls - Web Developer."
+        />
+      </Head>
       <motion.div
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
@@ -14,6 +21,7 @@ export default function Home() {
         <div className="md:px-4 flex flex-col justify-center items-center gap-20">
           <h1 className="transition-all duration-500 py-10 sm:py-16 lg:py-20 xl:py-40 text-3xl sm:text-5xl lg:text-5xl xl:text-7xl text-center max-w-sm sm:max-w-lg lg:max-w-4xl">
             <span
+              aria-label="brightly colored gradient behind text for emphasis"
               style={{
                 backgroundColor: "#2CC0A5",
                 background:
@@ -26,8 +34,14 @@ export default function Home() {
             >
               Dynamic
             </span>
-            , <span className="italic font-semibold">responsive</span> software
-            w/ the latest tech for{" "}
+            ,{" "}
+            <span
+              aria-label="slightly bolder and italicized for emphasis"
+              className="italic font-semibold"
+            >
+              responsive
+            </span>{" "}
+            software w/ the latest tech for{" "}
             <span className="underline text-teal-400">web and mobile</span>
           </h1>
           <div

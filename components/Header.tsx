@@ -24,14 +24,14 @@ const Header = () => {
           <div className="flex gap-2 items-center justify-center">
             <Image
               className="rounded-full shadow-xl w-12 lg:w-40 drop-shadow-[-2px_2px_2px_rgba(44,192,165,1)]"
-              alt="Matt Gehrls Headshot"
+              alt="Matt Gehrls smiling in a headshot. He has long hair and short beard wearing a shirt that matches the color scheme of the website."
               src="/images/square_headshot.jpg"
               width={150}
               height={150}
             />
             <div>
-              <h1 className="font-bold lg:text-3xl">Matt Gehrls</h1>
-              <h3 className="text-xs lg:text-lg">Full Stack Dev</h3>
+              <p className="font-bold lg:text-3xl">Matt Gehrls</p>
+              <p className="text-xs lg:text-lg">Full Stack Dev</p>
             </div>
           </div>
         </div>
@@ -45,6 +45,7 @@ const Header = () => {
             </div>
           </div>
           <button
+            aria-label="show/hide contact information"
             className="text-xs z-20 lg:hidden"
             onMouseEnter={() => {
               setHexHover(true);

@@ -5,9 +5,9 @@ const FitForPublicConsumption = () => {
   return (
     <div className="flex flex-col gap-4 mt-8">
       <div>
-        <h1 className="text-2xl font-bold tracking-wide">
+        <h2 className="text-2xl font-bold tracking-wide">
           Fit for Public Consumption
-        </h1>
+        </h2>
         <hr className="border-white w-full max-w-sm" />
         <div className="flex justify-between max-w-sm">
           <p className="text-sm text-slate-100 tracking-wide leading-loose">

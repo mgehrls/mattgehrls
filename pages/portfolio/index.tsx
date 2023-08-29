@@ -3,10 +3,18 @@ import streamSave from "../../public/images/streamsaveHome.png";
 import github from "../../public/images/github-mark-white.svg";
 import jamStats from "../../public/images/jam-stats-mobile.png";
 import Image from "next/image";
+import Head from "next/head";
 
 export default function Portfolio() {
   return (
     <AnimatePresence>
+      <Head>
+        <title>Portfolio | Matt Gehrls - Web Developer</title>
+        <meta
+          name="description"
+          content="Porfolio for Matt Gehrls - Web Developer."
+        />
+      </Head>
       <motion.div
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
@@ -132,7 +140,9 @@ const StreamSave = () => {
         <Image
           priority
           className="md:w-1/2 order-1 md:order-2"
-          alt={"The website streamsave.vercel.app's homepage"}
+          alt={
+            "Shows the homepage of a different website I made called StreamSave. It has a logo on the left and says 'fill your show hole with streamsave' as an attention grabber."
+          }
           src={streamSave}
         />
       </div>

@@ -13,9 +13,9 @@ export default function LogoSection() {
     "place-self-center transition-all delay-75 duration-500 ease-in-out scale-50 xl:scale-100 hover:scale-75 focus:scale-75 xl:hover:scale-125 xl:focus:scale-125 z-0";
   return (
     <div className="flex flex-col">
-      <h3 className="transition-all duration-500 py-4 xl:py-20 mb-8 text-2xl sm:text-3xl lg:text-5xl text-center font-bold">
+      <h2 className="transition-all duration-500 py-4 xl:py-20 mb-8 text-2xl sm:text-3xl lg:text-5xl text-center font-bold">
         Tech I use
-      </h3>
+      </h2>
       <div className="grid grid-flow-row grid-cols-2 md:grid-cols-3 max-w-screen lg:gap-y-16 z-0 mb-8">
         <a
           href="https://nextjs.org/"

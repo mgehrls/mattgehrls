@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
+import Head from "next/head";
 import { useEffect, useState } from "react";
 
 function ValidateEmail(mail: string) {
@@ -58,6 +59,13 @@ export default function Contact() {
 
   return (
     <AnimatePresence>
+      <Head>
+        <title>Contact | Matt Gehrls - Web Developer</title>
+        <meta
+          name="description"
+          content="A contact form to email Matt Gehrls with questions, comments, or job requests"
+        />
+      </Head>
       <motion.div
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
