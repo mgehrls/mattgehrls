@@ -1,6 +1,7 @@
 import LogoSection from "@/components/LogoSection";
 import { AnimatePresence, motion } from "framer-motion";
 import Head from "next/head";
+console.log("vercel test");
 
 export default function Home() {
   return (
