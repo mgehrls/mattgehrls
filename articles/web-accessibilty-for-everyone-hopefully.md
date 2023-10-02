@@ -3,8 +3,8 @@ author: matt-gehrls
 categories: ["web accessibility"]
 date: 08/25/23
 featured: false
-image: ./images/accessibility.png
-title: Web Accessibility for Everyone
+image: /images/accessibility.png
+title: Web Accessibility for Everyone... Hopefully
 subtitle: A web devs guide to web accessibility
 ---
 
@@ -123,7 +123,7 @@ Screen readers are essential tools for individuals with visual impairments, and 
 
 Header Hierarchy: Nearly 70% of screen reader users rely on headers to navigate web content. Ensure that your pages have a clear hierarchy with only one h1 for the primary content headline. Use h2, h3, and so on for subtopics.
 
-Landmarks: Over 50% of screen reader users use semantic HTML elements like <section>, <article>, <header>, and <footer> to navigate. These elements help users understand page structure and content organization. Consider their use for better accessibility.
+Landmarks: Over 50% of screen reader users use semantic HTML elements like section, article, header, and footer to navigate. These elements help users understand page structure and content organization. Consider their use for better accessibility.
 
 Aria Labels: If you have more than one of something people usually expect one of, like a navbar use aria labels to improve comprehension. For example, if you have two navbars, one for the header and one for the footer, you can use aria-label=“header” and aria-label=“footer” to help screen readers understand the difference. Note that screen readers will already announce the element so don't say "navbar" or navigation in the label. It's redundant.
 

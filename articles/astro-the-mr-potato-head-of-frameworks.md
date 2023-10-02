@@ -3,9 +3,9 @@ author: matt-gehrls
 categories: ["frameworks"]
 date: 08/25/23
 featured: false
-image: ./images/astro-post-image.png
+image: /images/astro-post-image.png
 title: "Astro: The Mr. Potato Head of Frameworks"
-subtitle: A web devs guide to web accessibility
+subtitle: Simple by default, complex when you want it
 ---
 
 Astro is an all in one web framework for building fast, content-focused websites. It's a new take on static site generation that combines the best parts of the Jamstack with the best parts of server-side rendering. Astro sites are fast by default and have JavaScript only when you need it. It's simple to start but you can make it as fancy and complex as you'd like.

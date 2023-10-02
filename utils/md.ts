@@ -3,6 +3,7 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import readingTime from 'reading-time'
 import { sync } from 'glob'
+import { Article } from './types'
 
 const articlesPath = path.join(process.cwd(), 'articles')
 
@@ -47,16 +48,17 @@ export async function getAllArticles() {
                 path.join(process.cwd(), 'articles', articleSlug),
                 'utf-8'
             )
-            const { data } = matter(source)
+            const { data, content } = matter(source)
 
             return [
                 {
+                    content,
                     ...data,
                     slug: articleSlug.replace('.md', ''),
                     readingTime: readingTime(source).text,
                 },
                 ...allArticles,
             ]
-        }, [] as { slug: string; readingTime: string, data:any }[])
+        }, [] as Article[])
     }
 
