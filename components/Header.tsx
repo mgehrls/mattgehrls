@@ -10,7 +10,7 @@ const Header = () => {
   const [hexHover, setHexHover] = useState(false);
 
   return (
-    <header className="w-screen flex justify-center items-center">
+    <header className="w-screen flex justify-center items-center bg-[#171717]">
       <div className="w-full max-w-7xl flex lg:flex-col lg:gap-4 justify-between lg:justify-center p-4 lg:px-8">
         <div className="flex gap-2 items-center justify-center">
           <Image
