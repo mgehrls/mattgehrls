@@ -1,37 +1,29 @@
-import FitForPublicConsumption from "@/components/blogPosts/FitForPublicConsumption";
-import AddingMore from "@/components/blogPosts/AddingMore";
-import Head from "next/head";
+import { getAllArticles } from "../../utils/md";
 
-export default function Blog() {
+export default function Blog({ posts }) {
+  console.log(posts);
+
   return (
-    // <AnimatePresence>
-    //   <motion.div
-    //     initial={{ opacity: 0, y: 15 }}
-    //     animate={{ opacity: 1, y: 0 }}
-    //     exit={{ opacity: 0, y: 15 }}
-    <div className="flex-1 order-2 h-full p-4">
-      <Head>
-        <title>Blog | Matt Gehrls - Web Developer</title>
-        <meta
-          name="description"
-          content="A blog for Matt Gehrls - Web Developer."
-        />
-      </Head>
-      <div className="flex justify-center items-center">
-        <div className="max-w-2xl">
-          <h1 className="pt-4 pl-4 text-3xl font-bold">Blog</h1>
-          <div className="p-4">
-            <AddingMore />
-          </div>
-          <div className="p-4">
-            <FitForPublicConsumption />
-          </div>
-        </div>
-      </div>
+    <div>
+      <h1>Blog</h1>
     </div>
   );
 }
-{
-  /* </motion.div>
-    </AnimatePresence> */
+
+export async function getStaticProps() {
+  const articles = await getAllArticles();
+  articles
+    .map((article) => article.data)
+    .sort((a, b) => {
+      if (a.data.publishedAt > b.data.publishedAt) return 1;
+      if (a.data.publishedAt < b.data.publishedAt) return -1;
+
+      return 0;
+    });
+
+  return {
+    props: {
+      posts: articles.reverse(),
+    },
+  };
 }
