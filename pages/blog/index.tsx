@@ -4,8 +4,10 @@ export default function Blog({ posts }) {
   console.log(posts);
 
   return (
-    <div>
-      <h1>Blog</h1>
+    <div className="flex h-full justify-center items-center">
+      <div className="flex flex-col items-center justify-center max-w-xl w-screen h-full gap-8">
+        <h1>Blog - WIP</h1>
+      </div>
     </div>
   );
 }
