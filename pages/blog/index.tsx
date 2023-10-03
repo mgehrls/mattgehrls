@@ -3,6 +3,7 @@ import { getAllArticles } from "../../utils/md";
 import { Article } from "../../utils/types";
 
 export default function Blog({ articles }: { articles: Article[] }) {
+  console.log(articles);
   return (
     <div className="flex h-full justify-center items-center">
       <div className="flex flex-col items-start justify-center max-w-4xl w-screen h-full gap-8 pt-8">

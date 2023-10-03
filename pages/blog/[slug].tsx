@@ -31,8 +31,9 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }: any) {
   const articles = await getAllArticles();
   const { slug } = params;
-  const article = articles.find((article) => article.slug === slug);
-  const source = await serialize(article?.content);
+  const article: Article | undefined = articles.find(
+    (article) => article.slug === slug
+  );
 
   return {
     props: {

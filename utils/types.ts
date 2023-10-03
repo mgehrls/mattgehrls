@@ -1,6 +1,7 @@
 export type Article = {
     author: string,
     categories: string[],
+    content: string,
     date: Date,
     featured: boolean,
     image: string,
