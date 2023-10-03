@@ -17,7 +17,7 @@ import {
 } from "@/components/mdx/MdxComponents";
 import Image from "next/image";
 import matter from "gray-matter";
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown, { Components } from "react-markdown";
 import React from "react";
 
 export default function ArticlePage({
@@ -40,17 +40,16 @@ export default function ArticlePage({
           />
           <ReactMarkdown
             components={{
-              h1: Heading.H1,
-              h2: Heading.H2,
-              h3: Heading.H3,
-              p: Para,
-              code: Code,
-              inlineCode: InlineCode,
-              blockquote: Blockquote,
-              ul: List,
-              ol: List,
-              image: Img,
-              a: MdxLink,
+              h1: Heading.H1 as Components["h1"],
+              h2: Heading.H2 as Components["h2"],
+              h3: Heading.H3 as Components["h3"],
+              p: Para as Components["p"],
+              code: Code as Components["code"],
+              blockquote: Blockquote as Components["blockquote"],
+              ul: List as Components["ul"],
+              ol: List as Components["ol"],
+              img: Img as Components["img"],
+              a: MdxLink as Components["a"],
             }}
           >
             {content}
