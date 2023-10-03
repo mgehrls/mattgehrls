@@ -8,24 +8,25 @@ title: Web Accessibility for Everyone... Hopefully
 subtitle: A web devs guide to web accessibility
 ---
 
-## Introduction
+# Web Accessibility for Everyone... Hopefully
 
 Website accessibility is a vital aspect of modern web development. In an era where the internet connects us all, ensuring that your website caters to a diverse audience is not only ethically the right thing to do but also makes good business sense. As web developers, it is our responsibility to create online experiences that are accessible to as many people as possible.
 
 How can we make sure we account for everyone? Let’s break down the most common groups of physical and mental impairment:
-Visual
-Auditory
-Motor
-Cognitive and
-Seizure & Vestibular Disorders
 
-Understanding these groups and how they interact with the internet will empower us to craft exceptional web experiences. The best part? There's a remarkable amount of overlap between these groups, making accessibility not just a necessity but also good design practice. We'll start with an overview of each group, the technologies available to enhance their experience, and conclude with practical tips tailored for web developers like you.
+- Visual
+- Auditory
+- Motor
+- Cognitive and
+- Seizure & Vestibular Disorders
+
+Understanding these groups and how they interact with the internet will empower us to craft exceptional web experiences. The best part? There's a remarkable amount of overlap between these groups, making accessibility not just a necessity but also good design practice. We'll start with an overview of each group, the technologies available to enhance their experience, and conclude with practical tips tailored for web developers.
 
 ## Visual Impairment
 
 When it comes to web accessibility, visual impairment might seem like the most straightforward consideration. Many frameworks have built-in mechanisms that prompt us to add alt text to images, and we often pat ourselves on the back for complying and move on. There is more to consider.
 
-WebAim classifies visual impairment into three groups:
+[WebAim](https://webaim.org/) classifies visual impairment into three groups:
 
 1. Blindness: People who are completely blind.
 2. Low Vision: Individuals with partial sight or reduced visual acuity.
@@ -33,11 +34,11 @@ WebAim classifies visual impairment into three groups:
 
 While you may think that catering to visual impairment covers a small portion of your audience, consider the following statistics:
 
-Blindness and low vision affect approximately 8% of the population.
-Color blindness impacts 4.25% of the population, with 8% of men and 0.5% of women affected.
-Moreover, as our population ages, low vision is becoming an increasingly significant accessibility consideration, particularly among internet-savvy seniors.
+1. Blindness and low vision affect approximately 8% of the population.
+2. Color blindness impacts 4.25% of the population, with 8% of men and 0.5% of women affected.
+3. Moreover, as our population ages, low vision is becoming an increasingly significant accessibility consideration, particularly among internet-savvy seniors.
 
-So, what should we account for when designing for visual impairment?
+### How to designing for visual impairment
 
 1. Screen Readers: These tools are essential for those who rely on auditory feedback to access web content.
 2. Keyboard Navigation: Many individuals with visual impairments rely on keyboard navigation to move through web pages.
@@ -60,8 +61,9 @@ As content creators and web developers, here are the key considerations to accou
 2. Keyboard Navigation: Implementing keyboard navigation functionality allows users to navigate your website without relying on a mouse, benefiting not only those with hearing impairments but also individuals with visual, and mobility challenges.
 3. Screen Readers: Optimizing your website for compatibility with screen readers is essential. Screen readers convert on-screen text and elements into synthesized speech, enabling users to understand and interact with your content.
 
-https://www.accessibilitychecker.org/blog/deaf-accessibility/
-https://webaim.org/articles/auditory/
+> Sources:\
+> [Accessibility Checker - Deaf Acessibility Blog](https://www.accessibilitychecker.org/blog/deaf-accessibility/)\
+> [WebAIM - Auditory Impairment](https://webaim.org/articles/auditory/)
 
 ## Motor impairments
 
@@ -72,8 +74,9 @@ Here are the essential considerations when designing for users with motor impair
 1. Keyboard Navigation: Implementing keyboard-friendly navigation is a cornerstone of web accessibility for visual, hearing, and motor impairments.
 2. Magnification: Recognizing that users may need to zoom in to make that button easier to interact with effectively is crucial. Ensuring that your website remains functional and visually understandable while magnified is vital.
 
-https://medium.com/nyc-design/web-accessibility-for-physical-or-motor-impairments-4fe5e170e375
-https://webaim.org/projects/motordisabilitysurvey/
+> Sources:\
+> [Medium - Web Access for Physical and Motor Impairments](https://medium.com/nyc-design/web-accessibility-for-physical-or-motor-impairments-4fe5e170e375)\
+> [WebAIM - Motor Disability Survey](https://webaim.org/projects/motordisabilitysurvey/)
 
 Cognitive impairment
 Cognitive impairment encompasses a vast and diverse group of users, making it one of the most challenging yet critical aspects of web accessibility. This group includes individuals facing various cognitive challenges, such as memory issues, problem-solving difficulties, attention deficits, struggles with reading, linguistic and verbal comprehension, math comprehension, and visual comprehension. The scope is vast, and the impact on user interactions with websites can be profound.

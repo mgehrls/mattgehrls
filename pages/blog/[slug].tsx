@@ -1,15 +1,61 @@
 import { serialize } from "next-mdx-remote/serialize";
 import { getAllArticles } from "../../utils/md";
-import { Article } from "../../utils/types";
 import { MDXRemote } from "next-mdx-remote";
+import fs from "fs";
+import { GetStaticPropsContext, InferGetStaticPropsType } from "next/types";
+import path from "path";
+import Head from "next/head";
+import {
+  Blockquote,
+  Code,
+  Heading,
+  Img,
+  InlineCode,
+  List,
+  MdxLink,
+  Para,
+} from "@/components/mdx/MdxComponents";
+import Image from "next/image";
+import matter from "gray-matter";
+import ReactMarkdown from "react-markdown";
+import React from "react";
 
-export default function Article({ article }: { article: Article }) {
+export default function ArticlePage({
+  data,
+  content,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <div className="flex h-full justify-center items-center">
-      <div className="flex flex-col items-start justify-center max-w-4xl w-screen h-full gap-8 pt-8">
-        <h2 className="text-4xl">
-          Temporarily broken. Working on getting mdx to work
-        </h2>
+    <div>
+      <Head>
+        <title></title>
+      </Head>
+      <div className="flex justify-center items-start">
+        <article className="w-full max-w-3xl bg-[#171717] p-8">
+          <Image
+            className="w-full"
+            src={data ? data?.image : ""}
+            alt=""
+            width={400}
+            height={200}
+          />
+          <ReactMarkdown
+            components={{
+              h1: Heading.H1,
+              h2: Heading.H2,
+              h3: Heading.H3,
+              p: Para,
+              code: Code,
+              inlineCode: InlineCode,
+              blockquote: Blockquote,
+              ul: List,
+              ol: List,
+              image: Img,
+              a: MdxLink,
+            }}
+          >
+            {content}
+          </ReactMarkdown>
+        </article>
       </div>
     </div>
   );
@@ -28,16 +74,19 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }: any) {
-  const articles = await getAllArticles();
-  const { slug } = params;
-  const article: Article | undefined = articles.find(
-    (article) => article.slug === slug
+export async function getStaticProps({ params }: GetStaticPropsContext) {
+  const { slug } = params as { slug: string };
+
+  const source = fs.readFileSync(
+    path.join("articles", (slug + ".md") as string),
+    "utf8"
   );
+  const { data, content } = matter(source);
 
   return {
     props: {
-      article: article,
+      data: data,
+      content: content,
     },
   };
 }
