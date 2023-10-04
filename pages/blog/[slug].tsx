@@ -29,6 +29,20 @@ export default function ArticlePage({
     setIsClient(true);
   }, []);
 
+  const MarkdownComponents = {
+      h1: Heading.H1 as Components["h1"],
+      h2: Heading.H2 as Components["h2"],
+      h3: Heading.H3 as Components["h3"],
+      p: Para as Components["p"],
+      code: Code as Components["code"],
+      blockquote: Blockquote as Components["blockquote"],
+      ul: List as Components["ul"],
+      ol: List as Components["ol"],
+      li: ListItem as Components["li"],
+      img: Img as Components["img"],
+      a: MdxLink as Components["a"],
+  }
+
   return (
     <div>
       <Head>
@@ -45,19 +59,7 @@ export default function ArticlePage({
           />
           {isClient && (
             <ReactMarkdown
-              components={{
-                h1: Heading.H1 as Components["h1"],
-                h2: Heading.H2 as Components["h2"],
-                h3: Heading.H3 as Components["h3"],
-                p: Para as Components["p"],
-                code: Code as Components["code"],
-                blockquote: Blockquote as Components["blockquote"],
-                ul: List as Components["ul"],
-                ol: List as Components["ol"],
-                li: ListItem as Components["li"],
-                img: Img as Components["img"],
-                a: MdxLink as Components["a"],
-              }}
+              components={MarkdownComponents}
             >
               {content}
             </ReactMarkdown>
