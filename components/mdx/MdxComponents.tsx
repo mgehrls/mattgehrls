@@ -5,8 +5,8 @@ import type { Element } from "hast";
 import { ExtraProps } from "react-markdown";
 
 export type Components = Partial<{
-  [TagName in keyof JSX.IntrinsicElements]: // Class component:
-  | (new (
+  [TagName in keyof JSX.IntrinsicElements]:  // Class component:
+    | (new (
         props: JSX.IntrinsicElements[TagName] & ExtraProps
       ) => JSX.ElementClass)
     // Function component:
@@ -62,11 +62,11 @@ export const Blockquote = ({ children }: { children: any }) => (
 );
 
 export const List = ({ children }: { children: any }) => (
-  <ul className="text-lg">
-    {children.map((child: any, i: number) => (
-      <li className="pl-8 py-1 italic" key={i + 1}>
-        {child}
-      </li>
-    ))}
-  </ul>
+  <ul className="text-lg">{children}</ul>
+);
+
+export const ListItem = ({ children, i }: { children: any; i: number }) => (
+  <li className="pl-8 py-1 italic" key={i + 1}>
+    {children}
+  </li>
 );

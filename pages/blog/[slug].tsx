@@ -1,6 +1,4 @@
-import { serialize } from "next-mdx-remote/serialize";
 import { getAllArticles } from "../../utils/md";
-import { MDXRemote } from "next-mdx-remote";
 import fs from "fs";
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next/types";
 import path from "path";
@@ -10,8 +8,8 @@ import {
   Code,
   Heading,
   Img,
-  InlineCode,
   List,
+  ListItem,
   MdxLink,
   Para,
 } from "@/components/mdx/MdxComponents";
@@ -19,11 +17,18 @@ import Image from "next/image";
 import matter from "gray-matter";
 import ReactMarkdown, { Components } from "react-markdown";
 import React from "react";
+import { useState, useEffect } from "react";
 
 export default function ArticlePage({
   data,
   content,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <div>
       <Head>
@@ -38,22 +43,25 @@ export default function ArticlePage({
             width={400}
             height={200}
           />
-          <ReactMarkdown
-            components={{
-              h1: Heading.H1 as Components["h1"],
-              h2: Heading.H2 as Components["h2"],
-              h3: Heading.H3 as Components["h3"],
-              p: Para as Components["p"],
-              code: Code as Components["code"],
-              blockquote: Blockquote as Components["blockquote"],
-              ul: List as Components["ul"],
-              ol: List as Components["ol"],
-              img: Img as Components["img"],
-              a: MdxLink as Components["a"],
-            }}
-          >
-            {content}
-          </ReactMarkdown>
+          {isClient && (
+            <ReactMarkdown
+              components={{
+                h1: Heading.H1 as Components["h1"],
+                h2: Heading.H2 as Components["h2"],
+                h3: Heading.H3 as Components["h3"],
+                p: Para as Components["p"],
+                code: Code as Components["code"],
+                blockquote: Blockquote as Components["blockquote"],
+                ul: List as Components["ul"],
+                ol: List as Components["ol"],
+                li: ListItem as Components["li"],
+                img: Img as Components["img"],
+                a: MdxLink as Components["a"],
+              }}
+            >
+              {content}
+            </ReactMarkdown>
+          )}
         </article>
       </div>
     </div>
