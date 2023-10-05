@@ -1,28 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Component } from "react";
-import type { Element } from "hast";
-import { ExtraProps } from "react-markdown";
-
-export type Components = Partial<{
-  [TagName in keyof JSX.IntrinsicElements]:  // Class component:
-    | (new (
-        props: JSX.IntrinsicElements[TagName] & ExtraProps
-      ) => JSX.ElementClass)
-    // Function component:
-    | ((
-        props: JSX.IntrinsicElements[TagName] & ExtraProps
-      ) => JSX.Element | string | null | undefined)
-    // Tag name:
-    | keyof JSX.IntrinsicElements;
-}>;
+import { Components } from "react-markdown";
 
 export const Heading = {
   H1: ({ children }: { children: any }) => (
-    <h1 className="text-4xl font-bold pt-8 pb-4 underline">{children}</h1>
+    <h1 className="text-5xl font-bold pt-8 pb-4 underline">{children}</h1>
   ),
   H2: ({ children }: { children: any }) => (
-    <h2 className="text-2xl font-bold pt-8 pb-4 underline">{children}</h2>
+    <h2 className="text-3xl font-bold pt-8 pb-4 underline">{children}</h2>
   ),
   H3: ({ children }: { children: any }) => (
     <h3 className="text-xl font-bold pt-8 pb-4 underline">{children}</h3>
@@ -45,20 +30,20 @@ export const MdxLink = ({
   </Link>
 );
 
-export const Para = (paragraph: { children?: boolean; node?: any}) => {
-  const { node } = paragraph
+export const Para = (paragraph: { children?: boolean; node?: any }) => {
+  const { node } = paragraph;
 
   if (node.children[0].tagName === "img") {
-    const image = node.children[0]
-    const metastring = image.properties.alt
-    const alt = metastring?.replace(/ *\{[^)]*\} */g, "")
-    const metaWidth = metastring.match(/{([^}]+)x/)
-    const metaHeight = metastring.match(/x([^}]+)}/)
-    const width = metaWidth ? metaWidth[1] : "768"
-    const height = metaHeight ? metaHeight[1] : "432"
-    const isPriority = metastring?.toLowerCase().match('{priority}')
-    const hasCaption = metastring?.toLowerCase().includes('{caption:')
-    const caption = metastring?.match(/{caption: (.*?)}/)?.pop()
+    const image = node.children[0];
+    const metastring = image.properties.alt;
+    const alt = metastring?.replace(/ *\{[^)]*\} */g, "");
+    const metaWidth = metastring.match(/{([^}]+)x/);
+    const metaHeight = metastring.match(/x([^}]+)}/);
+    const width = metaWidth ? metaWidth[1] : "768";
+    const height = metaHeight ? metaHeight[1] : "432";
+    const isPriority = metastring?.toLowerCase().match("{priority}");
+    const hasCaption = metastring?.toLowerCase().includes("{caption:");
+    const caption = metastring?.match(/{caption: (.*?)}/)?.pop();
 
     return (
       <div className="postImgWrapper">
@@ -66,15 +51,21 @@ export const Para = (paragraph: { children?: boolean; node?: any}) => {
           src={image.properties.src}
           width={width}
           height={height}
-          className="postImg"
+          className="py-8"
           alt={alt}
           priority={isPriority}
         />
-          {hasCaption ? <div className="caption" aria-label={caption}>{caption}</div> : null}
+        {hasCaption ? (
+          <div className="caption" aria-label={caption}>
+            {caption}
+          </div>
+        ) : null}
       </div>
-    )
+    );
   }
-  return <p>{paragraph.children}</p>
+  return (
+    <p className="py-4 leading-loose tracking-wide">{paragraph.children}</p>
+  );
 };
 
 export const Code = ({ children }: { children: any }) => (
@@ -90,11 +81,25 @@ export const Blockquote = ({ children }: { children: any }) => (
 );
 
 export const List = ({ children }: { children: any }) => (
-  <ul className="text-lg">{children}</ul>
+  <ul className="text-lg bg-[#252525] p-2 my-2 rounded-md">{children}</ul>
 );
 
 export const ListItem = ({ children, i }: { children: any; i: number }) => (
-  <li className="pl-8 py-1 italic" key={i + 1}>
-    {children}
+  <li className="pl-8 py-1 leading-loose tracking-wide" key={i + 1}>
+    » {children}
   </li>
 );
+
+export const MarkdownComponents = {
+  h1: Heading.H1 as Components["h1"],
+  h2: Heading.H2 as Components["h2"],
+  h3: Heading.H3 as Components["h3"],
+  p: Para as Components["p"],
+  code: Code as Components["code"],
+  blockquote: Blockquote as Components["blockquote"],
+  ul: List as Components["ul"],
+  ol: List as Components["ol"],
+  li: ListItem as Components["li"],
+  img: Img as Components["img"],
+  a: MdxLink as Components["a"],
+};

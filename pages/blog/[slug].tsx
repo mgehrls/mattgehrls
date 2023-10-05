@@ -3,51 +3,27 @@ import fs from "fs";
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next/types";
 import path from "path";
 import Head from "next/head";
-import {
-  Blockquote,
-  Code,
-  Heading,
-  Img,
-  List,
-  ListItem,
-  MdxLink,
-  Para,
-} from "@/components/mdx/MdxComponents";
+import { MarkdownComponents } from "@/components/mdx/MdxComponents";
 import Image from "next/image";
 import matter from "gray-matter";
-import ReactMarkdown, { Components } from "react-markdown";
+import ReactMarkdown from "react-markdown";
 import React from "react";
 import { useState, useEffect } from "react";
+import { ArticleData } from "@/utils/types";
 
 export default function ArticlePage({
   data,
   content,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  // useState and useEffect are used to prevent the markdown from rendering on the server which led to an error
   const [isClient, setIsClient] = useState(false);
-
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  const MarkdownComponents = {
-      h1: Heading.H1 as Components["h1"],
-      h2: Heading.H2 as Components["h2"],
-      h3: Heading.H3 as Components["h3"],
-      p: Para as Components["p"],
-      code: Code as Components["code"],
-      blockquote: Blockquote as Components["blockquote"],
-      ul: List as Components["ul"],
-      ol: List as Components["ol"],
-      li: ListItem as Components["li"],
-      img: Img as Components["img"],
-      a: MdxLink as Components["a"],
-  }
-
   return (
     <div>
-      <Head>
-        <title></title>
-      </Head>
+      <Seo {...data} />
       <div className="flex justify-center items-start">
         <article className="w-full max-w-3xl bg-[#171717] p-8">
           <Image
@@ -58,9 +34,7 @@ export default function ArticlePage({
             height={200}
           />
           {isClient && (
-            <ReactMarkdown
-              components={MarkdownComponents}
-            >
+            <ReactMarkdown components={MarkdownComponents}>
               {content}
             </ReactMarkdown>
           )}
@@ -69,6 +43,29 @@ export default function ArticlePage({
     </div>
   );
 }
+
+const Seo = ({
+  title,
+  description,
+  image,
+  categories,
+  author,
+  date,
+  slug,
+}: ArticleData) => (
+  <Head>
+    <meta name="title" content={title} />
+    <meta property="og:title" content={title} />
+    <meta name="description" content={description} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`https://mattgehrls.com${image}`} />
+    <meta property="og:url" content={`https://mattgehrls.com/blog/${slug}`} />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta property="og:type" content="article" />
+    <meta name="robots" content="index, follow" />
+    <title>{title}</title>
+  </Head>
+);
 
 export async function getStaticPaths() {
   const articles = await getAllArticles();
@@ -94,7 +91,7 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
 
   return {
     props: {
-      data: data,
+      data: data as ArticleData,
       content: content,
     },
   };

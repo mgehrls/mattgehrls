@@ -9,5 +9,15 @@ export type Article = {
     subtitle: string,
     slug: string,
     readingTime: string
+}
 
+export type ArticleData = {
+    author: string,
+    categories: string[],
+    date: Date,
+    image: string,
+    title: string,
+    description: string,
+    subtitle: string,
+    slug: string,
 }
