@@ -49,7 +49,7 @@ export async function getAllArticles() {
                 'utf-8'
             )
             const { data, content } = matter(source)
-            const { author, categories, date, featured, image, title, subtitle } = data
+            const { author, categories, date, image, title, subtitle } = data
 
             return [
                 {
@@ -58,7 +58,6 @@ export async function getAllArticles() {
                   categories,
                     content,
                     date,
-                    featured,
                     image,
                     title,
                     subtitle,

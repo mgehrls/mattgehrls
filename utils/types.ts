@@ -3,7 +3,6 @@ export type Article = {
     categories: string[],
     content: string,
     date: Date,
-    featured: boolean,
     image: string,
     title: string,
     subtitle: string,
