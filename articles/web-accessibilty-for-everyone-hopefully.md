@@ -10,6 +10,8 @@ subtitle: A web devs guide to web accessibility
 
 # Web Accessibility for Everyone... Hopefully
 
+![Test](/images/accessibility.png)
+
 Website accessibility is a vital aspect of modern web development. In an era where the internet connects us all, ensuring that your website caters to a diverse audience is not only ethically the right thing to do but also makes good business sense. As web developers, it is our responsibility to create online experiences that are accessible to as many people as possible.
 
 How can we make sure we account for everyone? Let’s break down the most common groups of physical and mental impairment:
