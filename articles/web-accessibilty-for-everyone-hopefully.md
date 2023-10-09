@@ -1,5 +1,5 @@
 ---
-author: matt-gehrls
+author: Matt Gehrls
 categories: ["web accessibility"]
 date: 10/5/23
 image: /images/accessibility.png

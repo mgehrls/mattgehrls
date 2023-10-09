@@ -71,6 +71,8 @@ const Seo = ({
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta property="og:type" content="article" />
     <meta name="robots" content="index, follow" />
+    <meta name="author" content={author}></meta>
+    <meta name="publish_date" property="og:publish_date" content={date.toDateString()} />
     <title>{title}</title>
   </Head>
 );

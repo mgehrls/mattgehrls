@@ -1,5 +1,5 @@
 ---
-author: matt-gehrls
+author: Matt Gehrls
 categories: ["frameworks"]
 date: 08/25/23
 featured: false
