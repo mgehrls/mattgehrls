@@ -10,13 +10,13 @@ subtitle: Simple by default, complex when you want it
 
 Astro is an all in one web framework for building fast, content-focused websites. It's a new take on static site generation that combines the best parts of the Jamstack with the best parts of server-side rendering. Astro sites are fast by default and have JavaScript only when you need it. It's simple to start but you can make it as fancy and complex as you'd like.
 
-It's the Mr. Potato Head of frameworks. I recently gave a talk about the benefits of Astro and why I like writing code in Astro. Here are my notes from that talk.
+It's the Mr. Potato Head of frameworks. 
 
 ## Performance is king
 
 An important metric of site performance is Time to Interaction of TTI and the biggest bottleneck that slows down your time to interaction is javascript. No javascript, no bottleneck. If your site is static, the server just has to respond with a pre generated HTML doc. If you need some data from an API or database you have a few options including having the server take care of the request, using javascript on the server, or you can send the javascript to the client and have their computer make the request.
 
-Astro's docs say it should load 40% faster than the same Next.JS page with 90% less javascript. They claim it should be nearly impossible to write a slow website in Astro. I have a few theories on how we could pull it off, but we’d have to go out of our way.
+Astro's docs say it should load 40% faster than the same Next.JS page with 90% less javascript. They claim it should be nearly impossible to write a slow website in Astro. I have a few theories on how we could pull it off, but the point is we’d have to go out of our way.
 
 ## Simplicity leads to more performant, accessibile code
 

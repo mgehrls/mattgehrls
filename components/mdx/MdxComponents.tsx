@@ -4,13 +4,13 @@ import { Components } from "react-markdown";
 
 export const Heading = {
   H1: ({ children }: { children: any }) => (
-    <h1 className="text-5xl font-bold pt-8 pb-4 underline">{children}</h1>
+    <h1 className="text-5xl font-bold pt-8 pb-4">{children}</h1>
   ),
   H2: ({ children }: { children: any }) => (
-    <h2 className="text-3xl font-bold pt-8 pb-4 underline">{children}</h2>
+    <h2 className="text-3xl font-bold pt-8 pb-4">{children}</h2>
   ),
   H3: ({ children }: { children: any }) => (
-    <h3 className="text-xl font-bold pt-8 pb-4 underline">{children}</h3>
+    <h3 className="text-xl font-bold pt-8 pb-4">{children}</h3>
   ),
 };
 
@@ -81,11 +81,11 @@ export const Blockquote = ({ children }: { children: any }) => (
 );
 
 export const List = ({ children }: { children: any }) => (
-  <ul className="text-lg bg-[#252525] p-2 my-2 rounded-md">{children}</ul>
+  <ul className="text-lg bg-[#252525] p-2 py-8 my-2 rounded-md">{children}</ul>
 );
 
 export const ListItem = ({ children, i }: { children: any; i: number }) => (
-  <li className="pl-8 py-1 leading-loose tracking-wide" key={i + 1}>
+  <li className="pl-8 py-2 leading-loose tracking-wide" key={i + 1}>
     » {children}
   </li>
 );

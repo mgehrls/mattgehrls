@@ -3,17 +3,17 @@ author: matt-gehrls
 categories: ["web accessibility"]
 date: 10/5/23
 image: /images/accessibility.png
-title: Web Accessibility for Everyone... Hopefully
+title: Web Accessibility for Everyone... hopefully
 description: A comprehensive overview of web accessibility for web developers in 2023 including tips and best practices.
 subtitle: A web devs guide to web accessibility
 slug: web-accessibility-for-everyone-hopefully
 ---
 
-# Web Accessibility for Everyone... Hopefully
+# Web Accessibility for Everyone... hopefully
 
 Website accessibility is a vital aspect of modern web development. In an era where the internet connects us all, ensuring that your website caters to a diverse audience is not only ethically the right thing to do but also makes good business sense. As web developers, it is our responsibility to create online experiences that are accessible to as many people as possible.
 
-How can we make sure we account for everyone? Let’s break down the most common groups of physical and mental impairment:
+How can we make sure we account for everyone? Let’s break down groups of physical and mental impairment:
 
 - Visual
 - Auditory

@@ -10,6 +10,8 @@ import ReactMarkdown from "react-markdown";
 import React from "react";
 import { useState, useEffect } from "react";
 import { ArticleData } from "@/utils/types";
+import Link from "next/link";
+import { AiOutlineArrowLeft } from "react-icons/ai";
 
 export default function ArticlePage({
   data,
@@ -24,7 +26,13 @@ export default function ArticlePage({
   return (
     <div>
       <Seo {...data} />
-      <div className="flex justify-center items-start">
+      <div className="flex flex-col items-center justify-start">
+        <div className="w-full max-w-3xl py-4">
+          <Link className="flex justify-start items-center gap-2" href={"/blog"} >
+            <AiOutlineArrowLeft/>
+             Back to Blog
+          </Link>
+        </div>
         <article className="w-full max-w-3xl bg-[#171717] p-8">
           <Image
             className="w-full"
