@@ -72,7 +72,6 @@ const Seo = ({
     <meta property="og:type" content="article" />
     <meta name="robots" content="index, follow" />
     <meta name="author" content={author}></meta>
-    <meta name="publish_date" property="og:publish_date" content={date.toLocaleDateString()} />
     <title>{title}</title>
   </Head>
 );
