@@ -2,6 +2,7 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import EmptyHex from "./EmptyHex";
+import clsx from "clsx";
 
 const links = [
   { href: "/", label: "About" },
@@ -13,7 +14,7 @@ const Navbar = () => {
   const path = usePathname();
 
   return (
-    <div className="w-screen flex justify-center items-center bg-[#171717]">
+    <div className="w-screen flex justify-center items-center">
       <nav className="max-w-7xl w-full px-2">
         <ul className="flex max-w-7xl h-10 w-full items-center justify-between lg:justify-evenly p-4 border-t border-white">
           {links.map((l) => (
@@ -23,11 +24,12 @@ const Navbar = () => {
                 whileHover={{ scale: 1.1 }}
               >
                 <Link
-                  className={`${
+                  className={clsx(
+                    "text-lg gap-2 flex items-center transition-all list-none",
                     l.href === path
-                      ? "text-teal-400 font-bold list-none transition-all flex items-center gap-2 max-h-8     "
-                      : "list-none text-slate-200 transition-all flex items-center gap-2"
-                  } text-lg`}
+                      ? "text-teal-400 font-bold max-h-8"
+                      : "text-slate-200"
+                  )}
                   href={l.href}
                 >
                   {l.href === path && <EmptyHex />}

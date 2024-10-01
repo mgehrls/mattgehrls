@@ -5,6 +5,7 @@ import Hexagon from "./Hexagon";
 import { contactConfig } from "@/utils/contactConfig";
 import ContactLink from "./ContactLink";
 import Navbar from "./Navbar";
+import clsx from "clsx";
 
 const Header = () => {
   const [showContactInfo, setShowContactInfo] = useState(false);
@@ -30,11 +31,10 @@ const Header = () => {
         </div>
         <div className="flex items-center justify-center">
           <div
-            className={
-              showContactInfo
-                ? "absolute top-0 right-0 lg:static lg:flex lg:justify-even lg:items-center transition-all duration-300 ease-in-out"
-                : "absolute top-0 right-0 hidden lg:static lg:flex lg:justify-even lg:items-center transition-all duration-300 ease-in-out"
-            }
+            className={clsx(
+              "absolute top-0 right-0 lg:static lg:flex lg:justify-even lg:items-center transition-all duration-300 ease-in-out",
+              showContactInfo ? "hidden" : ""
+            )}
           >
             <div className="flex flex-col lg:flex-row gap-4 p-8 lg:gap-16 lg:p-0 pt-24 lg:pt-0 bg-black bg-opacity-90 z-10 lg:bg-transparent lg:z-0">
               {contactConfig.map((contact, i) => (
