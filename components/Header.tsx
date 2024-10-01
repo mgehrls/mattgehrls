@@ -32,7 +32,7 @@ const Header = () => {
         <div className="flex items-center justify-center">
           <div
             className={clsx(
-              "absolute top-0 right-0 lg:static lg:flex lg:justify-even lg:items-center transition-all duration-300 ease-in-out",
+              "absolute top-0 right-4 lg:static lg:flex lg:justify-even lg:items-center transition-all duration-300 ease-in-out",
               showContactInfo ? "hidden" : ""
             )}
           >
