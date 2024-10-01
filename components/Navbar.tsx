@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <div className="w-screen flex justify-center items-center">
       <nav className="max-w-7xl w-full px-2">
-        <ul className="flex max-w-7xl h-10 w-full items-center justify-between lg:justify-evenly p-4 border-t border-white">
+        <ul className="flex max-w-7xl h-10 w-full items-center justify-around lg:justify-evenly p-4 border-t border-white">
           {links.map((l) => (
             <li className="list-none" key={l.href}>
               <motion.div
@@ -25,7 +25,7 @@ const Navbar = () => {
               >
                 <Link
                   className={clsx(
-                    "text-lg gap-2 flex items-center transition-all list-none",
+                    "text-lg gap-2 flex items-center transition-all",
                     l.href === path
                       ? "text-teal-400 font-bold max-h-8"
                       : "text-slate-200"
