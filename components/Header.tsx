@@ -11,7 +11,7 @@ const Header = () => {
 
   return (
     <header className="w-screen flex justify-center items-center bg-[#171717]">
-      <div className="w-full max-w-7xl flex lg:flex-col lg:gap-4 justify-between lg:justify-center p-4 lg:px-8">
+      <div className="w-full max-w-7xl flex lg:flex-col lg:gap-4 justify-between lg:justify-center py-4 px-8">
         <div className="flex gap-2 items-center justify-center">
           <Image
             className="rounded-full shadow-xl w-12 lg:w-40 drop-shadow-[-2px_2px_2px_rgba(44,192,165,1)]"
@@ -36,13 +36,18 @@ const Header = () => {
             }
           >
             <div className="flex flex-col lg:flex-row gap-4 p-8 lg:gap-16 lg:p-0 pt-24 lg:pt-0 bg-black bg-opacity-90 z-10 lg:bg-transparent lg:z-0">
-              {contactConfig.map((contact) => (
-                <ContactLink key={contact.href} {...contact} />
+              {contactConfig.map((contact, i) => (
+                <ContactLink
+                  tabIndex={i + 2}
+                  key={contact.href}
+                  contact={contact}
+                />
               ))}
             </div>
           </div>
         </div>
         <button
+          tabIndex={1}
           aria-label="show/hide contact information"
           className="text-xs z-20 lg:hidden"
           onMouseEnter={() => {

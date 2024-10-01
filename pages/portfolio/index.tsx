@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import streamSave from "../../public/images/streamsaveHome.png";
+import streamSave from "../../public/images/desktop-landing.png";
 import github from "../../public/images/github-mark-white.svg";
 import jamStats from "../../public/images/jam-stats-mobile.png";
 import Image from "next/image";
@@ -22,7 +22,7 @@ export default function Portfolio() {
         className="flex-1 order-2 h-full p-4"
       >
         <div className="flex justify-center items-center">
-          <div className="w-full max-w-7xl p-4">
+          <div className="w-full max-w-7xl p-4 flex flex-col justify-center items-center">
             <JamStats />
             <hr className="my-4 h-1 bg-white w-full" />
             <StreamSave />
@@ -35,22 +35,20 @@ export default function Portfolio() {
 
 const JamStats = () => {
   return (
-    <div className="my-8">
+    <div className="lg:my-8 mb-8">
       <div className="flex flex-col-reverse md:flex-row w-full gap-4">
         <div className="h-full flex flex-1 flex-col gap-8 justify-center md:m-8 mt-8">
           <h2 className="text-2xl font-bold underline">
             <a target="_blank" href="https://jam-stats.vercel.app">
-              Jam-Stats - coming soons
+              Jam-Stats - pending approval from Spotify
             </a>
           </h2>
           <p>
-            Log in with Spotify to see your data visualized and hear what a
-            ChatGPT thinks of your music/podcast taste.
+            Simple spotify stats of your favorite artists, songs, and playlists
+            over time. Currently only usable if we add you to a whitelist.
           </p>
 
-          <p>
-            Next.JS app using NextAuth, Framer Motion, Spotify and ChatGPT APIs.
-          </p>
+          <p>Next.JS app using NextAuth, Framer Motion, the Spotify API.</p>
           <p>
             The first collaboration between{" "}
             <a
@@ -60,11 +58,10 @@ const JamStats = () => {
             >
               Trevor Mathiak
             </a>{" "}
-            and me. Currently waiting on approval from Spotify before it is
-            availble for everyone. Using git with multiple people was a learning
-            experience. Having someone review and/or refactor your code makes me
-            want to be better and teaches me new or different ways to achieve
-            the same goals!
+            and myself. Currently waiting on approval from Spotify before it is
+            available for everyone. They denied our last attempt because it used
+            to use ChatGPT to judge and assess your taste. That feature has been
+            removed to comply with their terms of service.
           </p>
           <a target="_blank" href="https://github.com/trroev/jam-stats">
             <Image className="w-12 mt-4" alt="github logo" src={github} />
@@ -72,7 +69,7 @@ const JamStats = () => {
         </div>
         <Image
           priority
-          className="md:w-1/4 order-1 md:order-2"
+          className="md:w-1/4 order-1 md:order-2 border-2 border-white"
           alt={"The website streamsave.vercel.app's homepage"}
           src={jamStats}
         />
@@ -85,34 +82,17 @@ const StreamSave = () => {
   return (
     <div className="my-8">
       <div className="flex flex-col-reverse md:flex-row w-full gap-4">
-        <div className="h-full flex flex-1 flex-col gap-8 justify-center md:m-8 mt-8">
+        <div className="h-full lg:w-1/3 flex flex-1 flex-col gap-8 justify-center md:m-8 mt-8">
           <h2 className="text-2xl font-bold underline">
-            <a target="_blank" href="https://streamsave.vercel.app">
+            <a target="_blank" href="https://streamsave.app">
               StreamSave
             </a>
           </h2>
           <p>Organizing your favorite movies and shows in one place!</p>
 
           <p>
-            Fullstack type safe{" "}
-            <a
-              href="https://kit.svelte.dev/"
-              aria-label="Go to Sveltekit's website"
-              className="underline"
-              target="_blank"
-            >
-              Sveltekit
-            </a>{" "}
-            app with{" "}
-            <a
-              href="https://supabase.com/"
-              aria-label="Go to Supabase's website"
-              className="underline"
-              target="_blank"
-            >
-              Supabase
-            </a>{" "}
-            authentication and database using{" "}
+            Fullstack type safe Next.JS app with Clerk authentication,
+            PlanetScale backend using{" "}
             <a
               target="_blank"
               className="underline"
@@ -123,23 +103,19 @@ const StreamSave = () => {
             API for data and images.
           </p>
           <p>
-            This was my first solo full stack project and taught me so much
-            about database normalization, and typescript. The latest iteration
-            was created after I spent a month learning design principals and
-            figma. Some images are not optimized and it is a little gradient
-            heavy, but I think it is a good showcase of my skill level in early
-            2023.
+            The logo for Streamsave was inspired by an image created by the A.I.
+            image generator, Midjourney. But I needed a a loseless format, and
+            the original was a .png. So I recreated it in Figma, made my edits,
+            and exported it as an .svg. That is a workflow I can see being very
+            useful in the future.
           </p>
-          <a
-            target="_blank"
-            href="https://github.com/mgehrls/streamsave-sveltekit"
-          >
+          <a target="_blank" href="https://github.com/mgehrls/streamsave">
             <Image className="w-12 mt-4" alt="github logo" src={github} />
           </a>
         </div>
         <Image
           priority
-          className="md:w-1/2 order-1 md:order-2"
+          className="order-1 md:order-2 max-h-[837.38px] max-w-[624] h-auto w-auto border-2 border-white"
           alt={
             "Shows the homepage of a different website I made called StreamSave. It has a logo on the left and says 'fill your show hole with streamsave' as an attention grabber."
           }
