@@ -5,7 +5,6 @@ import EmptyHex from "./EmptyHex";
 
 const links = [
   { href: "/", label: "About" },
-  { href: "/blog", label: "Blog" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/contact", label: "Contact" },
 ];
