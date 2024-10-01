@@ -11,7 +11,6 @@ const links = [
 
 const Navbar = () => {
   const path = usePathname();
-  const isBlogPost = path.includes("/blog");
 
   return (
     <div className="w-screen flex justify-center items-center bg-[#171717]">
