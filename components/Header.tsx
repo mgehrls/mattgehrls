@@ -15,8 +15,8 @@ const Header = () => {
         <div className="flex gap-2 items-center justify-center">
           <Image
             className="rounded-full shadow-xl w-12 lg:w-40 drop-shadow-[-2px_2px_2px_rgba(44,192,165,1)]"
-            alt="Matt Gehrls smiling in a headshot. He has long hair and short beard wearing a shirt that matches the color scheme of the website."
-            src="/images/square_headshot.jpg"
+            alt="Man with short hair and beard"
+            src="/images/square-headshot.jpg"
             width={150}
             height={150}
           />
