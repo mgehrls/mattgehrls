@@ -11,7 +11,6 @@ const LayoutWrapper = ({ children }: LayoutWrapperProps) => (
     <div className="flex flex-col w-screen overflow-x-hidden min-h-screen max-h-screen text-slate-200">
       <div className="flex flex-col min-h-screen max-h-screen z-40">
         <Header />
-        <Navbar />
         <AnimatePresence>
           <motion.div
             initial={{ opacity: 0, y: 15 }}

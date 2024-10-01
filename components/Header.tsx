@@ -4,13 +4,14 @@ import { motion } from "framer-motion";
 import Hexagon from "./Hexagon";
 import { contactConfig } from "@/utils/contactConfig";
 import ContactLink from "./ContactLink";
+import Navbar from "./Navbar";
 
 const Header = () => {
   const [showContactInfo, setShowContactInfo] = useState(false);
   const [hexHover, setHexHover] = useState(false);
 
   return (
-    <header className="w-screen flex justify-center items-center bg-[#171717]">
+    <header className="w-screen flex flex-col justify-center items-center bg-[#171717]">
       <div className="w-full max-w-7xl flex lg:flex-col lg:gap-4 justify-between lg:justify-center py-4 px-8">
         <div className="flex gap-2 items-center justify-center">
           <Image
@@ -71,6 +72,7 @@ const Header = () => {
           </motion.div>
         </button>
       </div>
+      <Navbar />
     </header>
   );
 };
