@@ -8,13 +8,15 @@ import { contactConfig } from "@/utils/contactConfig";
 import ContactLink from "./ContactLink";
 import Navbar from "./Navbar";
 import clsx from "clsx";
+import { ThemeChanger } from "./ThemeChanger";
 
 const Header = () => {
   const [showContactInfo, setShowContactInfo] = useState(false);
   const [hexHover, setHexHover] = useState(false);
 
   return (
-    <header className="w-screen flex flex-col justify-center items-center bg-[#171717]">
+    <header className="w-screen flex flex-col justify-center items-center">
+      <ThemeChanger />
       <div className="w-full max-w-7xl flex lg:flex-col lg:gap-4 justify-between lg:justify-center py-4 px-8">
         <div className="flex gap-2 items-center justify-center">
           <Image
@@ -26,9 +28,7 @@ const Header = () => {
           />
           <div>
             <p className="font-bold lg:text-3xl text-gray-100">Matt Gehrls</p>
-            <p className="text-xs lg:text-lg text-gray-100">
-              Full Stack Web Dev
-            </p>
+            <p className="text-xs lg:text-lg text-gray-100">Web Developer</p>
           </div>
         </div>
         <div className="flex items-center justify-center">
