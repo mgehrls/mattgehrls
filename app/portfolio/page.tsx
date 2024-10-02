@@ -1,3 +1,5 @@
+"use client";
+
 import { AnimatePresence, motion } from "framer-motion";
 import streamSave from "../../public/images/desktop-landing.png";
 import github from "../../public/images/github-mark-white.svg";
@@ -8,13 +10,13 @@ import Head from "next/head";
 export default function Portfolio() {
   return (
     <AnimatePresence>
-      <Head>
+      {/* <Head>
         <title>Portfolio | Matt Gehrls - Web Developer</title>
         <meta
           name="description"
           content="Porfolio for Matt Gehrls - Web Developer."
         />
-      </Head>
+      </Head> */}
       <motion.div
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
