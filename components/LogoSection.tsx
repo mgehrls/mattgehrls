@@ -1,12 +1,12 @@
-import NextLogo from "@/components/logos/NextLogo";
-import SvelteKitLogo from "@/components/logos/SvelteKitLogo";
-import FlutterLogo from "@/components/logos/FlutterLogo";
-import NodeLogo from "@/components/logos/NodeLogo";
-import ReactLogo from "@/components/logos/ReactLogo";
-import SupabaseLogo from "@/components/logos/SupabaseLogo";
-import T3Logo from "@/components/logos/T3Logo";
-import TailwindLogo from "@/components/logos/TailwindLogo";
-import TypescriptLogo from "@/components/logos/TypescriptLogo";
+import NextLogo from "@/public/images/tech logos/NextLogo";
+import SvelteKitLogo from "@/public/images/tech logos/SvelteKitLogo";
+import FlutterLogo from "@/public/images/tech logos/FlutterLogo";
+import NodeLogo from "@/public/images/tech logos/NodeLogo";
+import ReactLogo from "@/public/images/tech logos/ReactLogo";
+import SupabaseLogo from "@/public/images/tech logos/SupabaseLogo";
+import T3Logo from "@/public/images/tech logos/T3Logo";
+import TailwindLogo from "@/public/images/tech logos/TailwindLogo";
+import TypescriptLogo from "@/public/images/tech logos/TypescriptLogo";
 
 export default function LogoSection() {
   const anchorClasses =
