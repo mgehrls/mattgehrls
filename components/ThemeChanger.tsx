@@ -1,23 +1,27 @@
 import { useTheme } from "next-themes";
-
+import { Moon, Sun } from "lucide-react";
 export const ThemeChanger = () => {
   const { theme, setTheme } = useTheme();
-  console.log(theme);
 
   return (
-    <div className="absolute top-0 right-0 bg-white">
+    <>
       {theme === "light" ? (
-        <button className="text-lightModeText" onClick={() => setTheme("dark")}>
-          Moon
+        <button
+          className="text-lightModeText border-2 border-lightModeText p-[6px] rounded-lg hover:scale-110 transition-all duration-150 ease-in-out"
+          onClick={() => setTheme("dark")}
+        >
+          <Moon />
           <p className="sr-only">Switch to dark mode</p>
         </button>
       ) : (
-        <button className="text-darkModeText" onClick={() => setTheme("light")}>
-          Sun
+        <button
+          className="text-darkModeText border-2 p-[6px] border-darkModeText rounded-lg hover:scale-110 transition-all duration-150 ease-in-out"
+          onClick={() => setTheme("light")}
+        >
+          <Sun />
           <p className="sr-only">Switch to light mode</p>
         </button>
       )}
-      {theme}
-    </div>
+    </>
   );
 };
