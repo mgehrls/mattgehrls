@@ -1,9 +1,8 @@
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import EmptyHex from "./EmptyHex";
 import clsx from "clsx";
-import SelfClosingTag from "./SelfClosingTag";
+import SelfClosingTag from "./svg/SelfClosingTag";
 
 const links = [
   { href: "/", label: "About" },
