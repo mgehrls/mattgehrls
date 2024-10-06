@@ -1,8 +1,7 @@
 "use client";
 import "@/styles/globals.css";
 import Header from "../components/Header";
-import { ThemeChanger } from "@/components/ThemeChanger";
-import Main from "@/components/Main";
+import Main from "@/components/main/Main";
 
 export default function Home() {
   return (
