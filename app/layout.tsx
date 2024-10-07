@@ -1,5 +1,6 @@
-import { ThemeProvider } from "@/components/ThemeProvider";
+import colors from "@/utils/colors";
 import clsx from "clsx";
+import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
 
 export const metadata = {
@@ -16,11 +17,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <ThemeProvider attribute="class" defaultTheme="system">
+      <ThemeProvider attribute="class" defaultTheme="dark">
         <body
           className={clsx(
-            "bg-slate-200 dark:bg-slate-900 text-slate-600 dark:text-slate-400 mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0 relative",
-            inter.className
+            "mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0 relative",
+            inter.className,
+            colors.background,
+            colors.body
           )}
         >
           {children}
