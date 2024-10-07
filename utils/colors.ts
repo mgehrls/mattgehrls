@@ -1,7 +1,20 @@
-const colors = {
-    background: 'bg-slate-200 dark:bg-slate-900',
-    heading: 'dark:text-slate-200',
-    body: 'text-slate-600 dark:text-slate-400',
+const light = {
+    background: 'gray-200',
+    highContrast: 'gray-900',
+    mediumContrast: 'gray-700',
+    lowContrast: 'gray-600',
+};
+
+const dark = {
+    background: 'slate-900',
+    highContrast: 'slate-200',
+    mediumContrast: 'slate-400',
+    lowContrast: 'slate-500',
 }
 
-export default colors;
+export const colors = {
+    background: `bg-${light.background} dark:bg-${dark.background}`,
+    body: `text-${light.mediumContrast} dark:text-${dark.mediumContrast}`,
+    heading: `text-${light.highContrast} dark:text-${dark.highContrast}`,
+}
+

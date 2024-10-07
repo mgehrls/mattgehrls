@@ -1,4 +1,4 @@
-import colors from "@/utils/colors";
+import { colors } from "@/utils/colors";
 import clsx from "clsx";
 import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
