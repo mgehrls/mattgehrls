@@ -1,10 +1,8 @@
-import { ContactType } from "@/utils/contactConfig";
-
 export default function ContactLink({
   contact,
   tabIndex,
 }: {
-  contact: ContactType;
+  contact: { href: string; icon: any; text: string };
   tabIndex: number;
 }) {
   return (

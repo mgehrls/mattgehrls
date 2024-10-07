@@ -1,24 +1,5 @@
+import { WorkItemProps, workItems } from "@/utils/workData";
 import React from "react";
-
-type WorkItemProps = {
-  link: string;
-  linkAriaLabel: string;
-  title: string;
-  where: string;
-  description: string;
-  techUsed: string[];
-};
-
-const workItems: WorkItemProps[] = [
-  {
-    link: "https://www.mattgehrls.com",
-    linkAriaLabel: "Matt Gehrls",
-    title: "Matt Gehrls",
-    where: "Personal Site",
-    description: "My personal site, built with Next.js and Tailwind CSS.",
-    techUsed: ["Next.js", "Tailwind CSS"],
-  },
-];
 
 function Work() {
   return (
@@ -27,14 +8,9 @@ function Work() {
       className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
       aria-label="Work"
     >
-      <WorkItem
-        link={workItems[0].link}
-        linkAriaLabel={workItems[0].linkAriaLabel}
-        title={workItems[0].title}
-        where={workItems[0].where}
-        description={workItems[0].description}
-        techUsed={workItems[0].techUsed}
-      />
+      {workItems.map((workItem) => (
+        <WorkItem key={workItem.title} {...workItem} />
+      ))}
     </section>
   );
 }
