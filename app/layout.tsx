@@ -17,6 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      {/* just import theme provider from react-theme, no need for your own component */}
       <ThemeProvider attribute="class" defaultTheme="dark">
         <body
           className={clsx(
