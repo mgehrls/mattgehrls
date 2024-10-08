@@ -11,7 +11,7 @@ function About() {
         <p>
           For years I played with no-code/low-code tools for productivity, but
           in 2020 I took the plunge and started teaching myself to code through
-          youtube videos, and online tutorials.
+          youtube videos, online tutorials, and reading documentation.
         </p>
         <p className="mt-4">
           Now I&apos;ve had the opportunity to lead development on a greenfield
