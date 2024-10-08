@@ -8,6 +8,7 @@ function About() {
       aria-label="About me"
     >
       <div className="mt-4">
+        {/* Add links and a short personal paragraph */}
         <p>
           For years I played with no-code/low-code tools for productivity, but
           in 2020 I took the plunge and started teaching myself to code through
