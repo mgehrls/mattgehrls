@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 import Header from "../components/Header";
 import About from "@/components/main/About";
 import Work from "@/components/main/Work";
+import Attribution from "@/components/main/Attribution";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <main id="content" className="pt-24 lg:w-1/2 lg:py-24">
         <About />
         <Work />
+        <Attribution />
       </main>
     </div>
   );
