@@ -9,9 +9,10 @@ function About() {
     >
       <div className="mt-4">
         <p>
-          I found code through automating repetitive tasks as a real estate
-          transaction coordinator in 2018, started learning the basics in 2020,
-          and in mid 2021 left my job to learn full stack development full time.
+          I stumbled into code through automating repetitive tasks as a real
+          estate transaction coordinator in 2018, started learning the basics in
+          2020, and in mid 2021 I had realized I found a passion and left my job
+          to learn full stack development full time.
         </p>
         <p className="mt-4">
           Now I&apos;ve had the opportunity to lead development on a greenfield
