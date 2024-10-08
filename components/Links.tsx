@@ -82,13 +82,13 @@ function Links() {
   }
 
   return (
-    <div className="transition-all duration-300 ease-in-out mt-8 lg:mt-0">
+    <div className="transition-all duration-300 ease-in-out mt-8 lg:mt-0 text-gray-600 dark:text-slate-400">
       <div className="flex items-center">
-        <ul className="flex items-center" aria-label="Social media">
+        <ul className="flex items-center z-10" aria-label="Social media">
           {links.map((link) => (
             <li key={link.href} className="mr-5 text-xs shrink-0">
               <a
-                className="block hover:text-slate-200"
+                className="block hover:text-gray-900 focus:text-gray-900 hover:dark:text-slate-200 focus:dark:text-slate-200"
                 href={link.href}
                 target="_blank"
                 rel="noreferrer noopener"
@@ -102,7 +102,7 @@ function Links() {
           ))}
         </ul>
         <button
-          className="border-2 border-current rounded-full px-4 py-2 z-10 text-sm"
+          className="border-[1px] border-current z-10 rounded-full px-4 py-2 text-sm font-bold hover:text-gray-900 focus:text-gray-900 hover:dark:text-slate-200 focus:dark:text-slate-200 hover:scale-105 focus:scale-105 transition-all duration-150 ease-in-out focus:outline"
           aria-label="Reveals links to email and phone, and buttons to copy that information to your clipboard"
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -111,7 +111,7 @@ function Links() {
       </div>
       <div
         className={clsx(
-          "border-1 border-white transition-all duration-150 ease-in-out motion-reduce:transition-none flex flex-col gap-4 justify-center",
+          "transition-all duration-150 ease-in-out motion-reduce:transition-none flex flex-col gap-4 justify-center",
           isOpen ? "opacity-100 h-10 mt-10" : "opacity-0 h-0 mt-0"
         )}
       >
@@ -122,7 +122,7 @@ function Links() {
           >
             <a
               className={clsx(
-                "transition-all duration-150 ease-in-out flex gap-4 hover:scale-105 focus:scale-105",
+                "transition-all duration-150 ease-in-out flex gap-4 hover:text-gray-900 focus:text-gray-900 hover:dark:text-slate-200 focus:dark:text-slate-200 hover:scale-105 focus:scale-105",
                 !isOpen && "hidden"
               )}
               href={contact.href}
@@ -148,7 +148,7 @@ function Links() {
                 onClick={() => contact.setCopied()}
                 aria-label={`Copy ${contact.text} to clipboard`}
                 className={clsx(
-                  "mr-10 hover:scale-110 focus:scale-110 transition-none duration-150 ease-in-out",
+                  "mr-10 hover:text-gray-900 focus:text-gray-900 hover:dark:text-slate-200 focus:dark:text-slate-200 hover:scale-105 focus:scale-105 transition-all duration-150 ease-in-out",
                   !isOpen && "hidden"
                 )}
               >
