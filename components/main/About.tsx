@@ -8,19 +8,22 @@ function About() {
       aria-label="About me"
     >
       <div className="mt-4">
+        {/* Add links and a short personal paragraph */}
         <p>
-          I stumbled into code through automating repetitive tasks as a real
-          estate transaction coordinator in 2018, started learning the basics in
-          2020, and in mid 2021 I had realized I found a passion and left my job
-          to learn full stack development full time.
+          For years I played with no-code/low-code tools for productivity, but
+          in 2020 I took the plunge and started teaching myself to code through
+          youtube videos, online tutorials, and reading documentation.
         </p>
         <p className="mt-4">
           Now I&apos;ve had the opportunity to lead development on a greenfield
           MVP for an international art competition, worked on multiple
           production CMS&apos;, and have coded extensively in an enterprise
-          level code base.
+          level code base during my internship at a software agency.
         </p>
-        <p className="mt-4">And I&apos;m ready for the next challenge.</p>
+        <p className="mt-4">
+          I&apos;m now looking for work, learning .Net, and refreshing my
+          portfolio to reflect the things I&apos;ve learned.
+        </p>
       </div>
     </section>
   );
