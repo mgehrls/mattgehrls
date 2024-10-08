@@ -2,12 +2,13 @@ import clsx from "clsx";
 import Navbar from "./Navbar";
 import { ThemeChanger } from "./ThemeChanger";
 import { colors } from "@/utils/colors";
+import Links from "./Links";
 
 const Header = () => {
   return (
-    <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24 text-right items-center relative">
+    <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24 relative">
       <ThemeChanger />
-      <div className="text-left">
+      <div>
         <h1
           className={clsx(
             "text-4xl font-bold tracking-tight sm:text-5xl",
@@ -28,6 +29,7 @@ const Header = () => {
         <p className="mt-8 max-w-xs leading-normal">I&apos;ve got you.</p>
         <Navbar />
       </div>
+      <Links />
     </header>
   );
 };
