@@ -135,6 +135,15 @@ function Links() {
               {contact.text}
             </a>
             <div className="flex items-center gap-2">
+              <span
+                aria-hidden
+                className={clsx(
+                  "transition-all duration-500 ease-in-out",
+                  contact.copied ? "opacity-100" : "opacity-0"
+                )}
+              >
+                Copied!
+              </span>
               <button
                 onClick={() => contact.setCopied()}
                 aria-label={`Copy ${contact.text} to clipboard`}
@@ -145,15 +154,6 @@ function Links() {
               >
                 <CopyToClipboard size={25} />
               </button>
-              <span
-                aria-hidden
-                className={clsx(
-                  "transition-all duration-500 ease-in-out",
-                  contact.copied ? "opacity-100" : "opacity-0"
-                )}
-              >
-                Copied!
-              </span>
             </div>
           </div>
         ))}
