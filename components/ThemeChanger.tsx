@@ -7,7 +7,7 @@ export const ThemeChanger = () => {
     <div className="absolute top-4 right-4">
       {theme === "light" ? (
         <button
-          className="text-lightModeText border-2 border-lightModeText p-[6px] rounded-lg hover:scale-110 transition-all duration-150 ease-in-out"
+          className="p-[6px] rounded-lg hover:scale-110 transition-all duration-150 ease-in-out"
           onClick={() => setTheme("dark")}
         >
           <Moon />
@@ -15,7 +15,7 @@ export const ThemeChanger = () => {
         </button>
       ) : (
         <button
-          className="border-2 p-[6px] border-darkModeBodyText rounded-lg hover:scale-110 transition-all duration-150 ease-in-out"
+          className="p-[6px] rounded-lg hover:scale-110 transition-all duration-150 ease-in-out"
           onClick={() => setTheme("light")}
         >
           <Sun />
