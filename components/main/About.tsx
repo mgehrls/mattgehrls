@@ -2,11 +2,8 @@ import React from "react";
 
 function About() {
   return (
-    <section
-      id="about"
-      aria-label="About me"
-    >
-      <div className="mt-4">
+    <section id="about" aria-label="About me">
+      <div className="mt-4 font-medium">
         {/* Add links and a short personal paragraph */}
         <p>
           For years I played with no-code/low-code tools for productivity, but
