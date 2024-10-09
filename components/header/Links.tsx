@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { Copy, Mail, Phone } from "lucide-react";
 import React from "react";
-import CopyToClipboard from "./svg/CopyToClipboard";
+import CopyToClipboard from "../svg/CopyToClipboard";
 
 export interface Link {
   href: string;

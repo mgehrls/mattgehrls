@@ -1,6 +1,6 @@
 "use client";
 import "@/styles/globals.css";
-import Header from "../components/Header";
+import Header from "../components/header/Header";
 import About from "@/components/main/About";
 import Work from "@/components/main/Work";
 import Attribution from "@/components/main/Attribution";
