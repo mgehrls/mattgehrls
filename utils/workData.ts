@@ -49,4 +49,12 @@ export const workItems: WorkItemProps[] = [
         "I was responsible for managing the transaction process for a small team of realtors in Grand Rapids. This included creating and managing contracts, communicating with clients, lenders, and title companies, and ensuring that all deadlines were met. I created and maintained systems to manage of all transactions, and created a system for automating repetitive tasks. I also maintained the company website and social media accounts and was responsible for online and print advertising.",
       techUsed: ["Wix", "SquareSpace", "Airtable", 'Canva'],
     },
+    {
+      timeFrame: "2016 - 2017",
+      title: "Maintenance Manager/ Leasing Agent",
+      where: "Here 2 Serve Property Management",
+      description:
+        "Managed a team of 6-8 maintenance technicians, and was responsible for all maintenance requests, and ensuring that all work was completed to a high standard in a timely fashion. I also screened potential tenants for rental properties, and showed properties to prospective tenants. I was responsible for all advertising, and redesigned and maintained the company website. The company went out of business in 2017.",
+      techUsed: ["Wordpress", "Google Forms", "Google Sheets"],
+    },
   ];
