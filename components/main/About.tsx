@@ -4,7 +4,6 @@ function About() {
   return (
     <section
       id="about"
-      className="mb-16 md:mb-24 lg:mb-36"
       aria-label="About me"
     >
       <div className="mt-4">

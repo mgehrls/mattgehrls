@@ -10,7 +10,7 @@ export type WorkItemProps = {
   
 export const workItems: WorkItemProps[] = [
     {
-      timeFrame: "Jan 2024 - July 2024",
+      timeFrame: "Jan - July 2024",
       link: "https://www.fusionary.com",
       linkAriaLabel: "Software Development Intern at Fusionary",
       title: "Software Development Intern",
@@ -37,7 +37,7 @@ export const workItems: WorkItemProps[] = [
       ],
     },
     {
-      timeFrame: "July 2023 - Jan 2024",
+      timeFrame: "2023 - 2024",
       title: "Office Manager",
       where: "RE/MAX SunQuest",
       description:
@@ -45,7 +45,7 @@ export const workItems: WorkItemProps[] = [
       techUsed: ["Wix", "SquareSpace", "Airtable", "Google Sheets"],
     },
     {
-      timeFrame: "Jan 2018 - July 2021",
+      timeFrame: "2018 - 2021",
       title: "Transaction Coordinator",
       where: "Five Star Real Estate",
       description:
@@ -53,7 +53,7 @@ export const workItems: WorkItemProps[] = [
       techUsed: ["Wix", "SquareSpace", "Airtable"],
     },
     {
-      timeFrame: "July 2016 - December 2017",
+      timeFrame: "2016 - 2017",
       title: "Maintenance Manager/ Leasing Agent",
       where: "Here 2 Serve Property Management",
       description:
