@@ -5,13 +5,16 @@ import { PortfolioItemProps, portfolioItems } from "@/utils/projectData";
 
 function Portfolio() {
   return (
-    <div id="projects">
-      <ul className="mt-24 scroll-mt-24">
+    <section id="projects" className="mt-24 scroll-mt-24" aria-label="Projects">
+      <h2 className="text-sm font-bold uppercase tracking-widest text-gray-900 dark:text-slate-200">
+        Projects
+      </h2>
+      <ul className="mt-12">
         {portfolioItems.map((portfolioItem) => (
           <PortfolioItem key={portfolioItem.title} {...portfolioItem} />
         ))}
       </ul>
-    </div>
+    </section>
   );
 }
 
