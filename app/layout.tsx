@@ -1,14 +1,14 @@
 import { colors } from "@/utils/colors";
 import clsx from "clsx";
 import { ThemeProvider } from "next-themes";
-import { Inter } from "next/font/google";
+import { Inter, Roboto_Flex } from "next/font/google";
 
 export const metadata = {
   title: "Matt Gehrls - Full Stack Web Dev",
   description: "A resume site for Matt Gehrls, a Full Stack Web Developer",
 };
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto_Flex({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -21,8 +21,8 @@ export default function RootLayout({
       <ThemeProvider attribute="class" defaultTheme="dark">
         <body
           className={clsx(
-            "mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0 relative",
-            inter.className,
+            "mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0 relative",
+            roboto.className,
             "bg-slate-200 dark:bg-slate-900",
             "text-slate-700 dark:text-slate-400"
           )}

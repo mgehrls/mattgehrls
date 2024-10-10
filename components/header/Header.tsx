@@ -31,7 +31,6 @@ const Header = () => {
         <Navbar />
       </div>
       <Links />
-      <ThemeChanger />
     </header>
   );
 };
