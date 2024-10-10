@@ -9,9 +9,14 @@ function Work() {
       className="flex flex-col gap-8 mt-24 scroll-mt-16"
       aria-label="Work"
     >
-      {workItems.map((workItem) => (
-        <WorkItem key={workItem.title} {...workItem} />
-      ))}
+      <h2 className="text-sm font-bold uppercase tracking-widest text-gray-900 dark:text-slate-200">
+        Work
+      </h2>
+      <ul className="mt-12">
+        {workItems.map((workItem) => (
+          <WorkItem key={workItem.title} {...workItem} />
+        ))}
+      </ul>
     </section>
   );
 }
@@ -28,7 +33,7 @@ function WorkItem({
   techUsed,
 }: WorkItemProps) {
   return (
-    <div className="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4">
+    <li className="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4">
       <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:dark:bg-slate-800/50 lg:group-hover:bg-slate-200/50 lg:group-hover:shadow-slate-200/50 lg:group-hover:drop-shadow-lg" />
       <header
         className="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2"
@@ -74,6 +79,6 @@ function WorkItem({
           ))}
         </ul>
       </div>
-    </div>
+    </li>
   );
 }

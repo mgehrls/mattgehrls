@@ -3,7 +3,10 @@ import React from "react";
 function About() {
   return (
     <section id="about" aria-label="About me">
-      <div className="mt-4 font-medium">
+      <h2 className="text-sm font-bold uppercase tracking-widest text-gray-900 dark:text-slate-200">
+        About Me
+      </h2>
+      <div className="mt-12">
         {/* Add links and a short personal paragraph */}
         <p>
           For years I played with no-code/low-code tools for productivity, but
