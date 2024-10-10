@@ -2,6 +2,7 @@ import clsx from "clsx";
 import { Copy, Mail, Phone } from "lucide-react";
 import React from "react";
 import CopyToClipboard from "../svg/CopyToClipboard";
+import { ThemeChanger } from "./ThemeChanger";
 
 export interface Link {
   href: string;
@@ -102,13 +103,15 @@ function Links() {
           ))}
         </ul>
         <button
-          className="border-[1px] border-current z-10 rounded-full px-4 py-2 text-sm font-bold hover:text-slate-900 focus:text-slate-900 hover:dark:text-slate-200 focus:dark:text-slate-200 hover:scale-105 focus:scale-105 transition-all duration-150 ease-in-out focus:outline"
+          className="border-[1px] mr-5 border-current z-10 rounded-full px-4 py-2 text-sm font-bold hover:text-slate-900 focus:text-slate-900 hover:dark:text-slate-200 focus:dark:text-slate-200 hover:scale-105 focus:scale-105 transition-all duration-150 ease-in-out focus:outline"
           aria-label="Reveals links to email and phone, and buttons to copy that information to your clipboard"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? "Hide Contact" : "Show Contact"}
         </button>
+        <ThemeChanger />
       </div>
+
       <div
         className={clsx(
           "transition-all duration-150 ease-in-out motion-reduce:transition-none flex flex-col gap-4 justify-center",

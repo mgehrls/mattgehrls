@@ -4,7 +4,7 @@ export const ThemeChanger = () => {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="absolute top-4 right-4">
+    <div className="z-10">
       {theme === "light" ? (
         <button
           className="p-[6px] rounded-lg hover:scale-110 transition-all duration-150 ease-in-out"
