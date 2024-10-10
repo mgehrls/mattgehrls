@@ -12,7 +12,7 @@ function Work() {
       <h2 className="text-sm font-bold uppercase tracking-widest text-gray-900 dark:text-slate-200">
         Work
       </h2>
-      <ul className="mt-12">
+      <ul className="mt-12 flex flex-col gap-12">
         {workItems.map((workItem) => (
           <WorkItem key={workItem.title} {...workItem} />
         ))}
