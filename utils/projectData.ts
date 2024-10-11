@@ -20,7 +20,7 @@ export const portfolioItems: PortfolioItemProps[] = [
       {
         href: 'https://streamsave.app/',
         title: 'StreamSave',
-        description: 'Fill your show hole with StreamSave. A Next.JS web app designed to keep track of your favorite shows, make a watch list, and discover new shows. Data and images courtesy of themovieDB.org API. PlanetScale removed their free tier, so it is currently being reworked with MongoDB and is not currently working.',
+        description: 'Fill your show hole with StreamSave. A Next.JS web app designed to keep track of your favorite shows, make a watch list, and discover new shows. Data and images courtesy of themovieDB.org API.',
         image: '/images/streamsave-logo.png',
         imageAlt: 'StreamSave',
         ariaLabel: 'StreamSave',
