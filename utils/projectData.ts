@@ -9,6 +9,14 @@ export type PortfolioItemProps = {
   
 export const portfolioItems: PortfolioItemProps[] = [
       {
+        href: 'https://drcwm.org/',
+        title: 'Dispute Resolution Center West Michigan',
+        description: 'As part of a five person team, we put together this Wordpress site made for a local non-profit during Weekend for Good 2024. We made 30 reusable components, set up their donation service, made it accessible, and editable for their staff.',
+        image: '/images/drcwm-logo.png',
+        imageAlt: 'Dispute Resolution Center West Michigan',
+        ariaLabel: 'Dispute Resolution Center West Michigan',
+      },
+      {
         href: "https://jam-stats.vercel.app/",
         title: "JamStats",
         description:
@@ -21,7 +29,7 @@ export const portfolioItems: PortfolioItemProps[] = [
         href: 'https://streamsave.app/',
         title: 'StreamSave',
         description: 'Fill your show hole with StreamSave. A Next.JS web app designed to keep track of your favorite shows, make a watch list, and discover new shows. Data and images courtesy of themovieDB.org API.',
-        image: '/images/streamsave-logo.png',
+        image: '/images/streamsave-cover.png',
         imageAlt: 'StreamSave',
         ariaLabel: 'StreamSave',
       },
