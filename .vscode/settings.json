@@ -5,6 +5,8 @@
         "clsx",
         "codebases",
         "Fusionary",
+        "jamstats",
+        "streamsave",
         "Supabase",
         "tailwindcss"
     ]
